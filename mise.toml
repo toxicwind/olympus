@@ -1,0 +1,6 @@
+[tools]
+bun = "latest"
+
+[tasks]
+run = "bin/run"
+check = "bin/check"

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# olympus rig — the registry's primary operation.
+# olympus HOLDS the Greek-coded product lineage (the pantheon). Its main op is
+# authoritative cataloging: render the pantheon table so the lineage is visible.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+echo "--- olympus pantheon (Greek-coded products) ---"
+sed -n '/## The pantheon/,/^## /p' README.md | sed -n '1,40p'

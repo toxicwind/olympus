@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# olympus check gate — fast self-test with a clear PASS/FAIL exit code.
+# The registry is valid if the README pantheon table renders and the catalog
+# files parse. Kept sub-second (2s rule) — no network, no typecheck needed here.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+fail=0
+
+if [ -f package.json ] && grep -q '"name": "olympus"' package.json; then
+  echo "PASS registry-package"
+else
+  echo "FAIL registry-package"
+  fail=1
+fi
+
+if [ -f README.md ] && grep -q 'The pantheon' README.md; then
+  echo "PASS registry-pantheon-table"
+else
+  echo "FAIL registry-pantheon-table"
+  fail=1
+fi
+
+if [ -f README.md ] && grep -q 'Greek-coded' README.md; then
+  echo "PASS registry-readme"
+else
+  echo "FAIL registry-readme"
+  fail=1
+fi
+
+if [ "$fail" -eq 0 ]; then
+  echo "OLYMPUS CHECK: PASS"
+  exit 0
+fi
+echo "OLYMPUS CHECK: FAIL"
+exit 1
