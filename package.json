@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "The home of the Greek-coded products — registry of the panthcoon: tau, kappa, skopos, kilo, muse, keryx, hodos, kairos, kryptos.",
+  "description": "The home of the Greek-coded products \u2014 registry of the panthcoon: tau, kappa, skopos, kilo, muse, keryx, rhodochrosite, kairos, kryptos.",
   "scripts": {
     "run": "bin/run",
-    "check": "bin/check"
+    "check": "bin/check",
+    "readme": "bun ./bin/readme-gen.ts"
   }
 }
