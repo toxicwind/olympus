@@ -1,4 +1,4 @@
-# The home of the Greek-coded products — registry of the panthcoon: tau, kappa, skopos, kilo, muse, keryx, rhodochrosite, kairos, kryptos.
+# olympus — the home of the Greek-coded products
 
 One of the estate's five pens (`pens/{estate,geode,barn,ranch,olympus}`).
 Every pen has the same shape: `products/` for peer standalone checkouts,
@@ -9,13 +9,14 @@ is symlinked into `~/.local/bin` and pinned by the estate-ops manifest.
 
 | Product | Port | Language | Role |
 | --- | --- | --- | --- |
-| agele | 25001,25100,25104 | Go | Run a whole agele of LLM backends behind one OpenAI-compatible API. |
 | agon | — | Python | The empirical code contest. Race candidate code strategies against each |
 | antilogos | — | JavaScript | Counter-argument to the first answer. An adversarial verification engine: |
 | chronos-forge | — | TypeScript | A repo-scoped Mixture-of-Experts agent backplane with an endless, |
 | didymos | 25202 | — | First-class Gemini API MCP server for the mesh: a self-healing multi-key pool with round-robin + ... |
-| rhodochrosite | 25193 | Rust | — |
-| kairos | — | TypeScript | The opportune moment — the 2-second rule, first-class: every command an agent |
+| ergane | — | TypeScript | Ticket-driven development & speculative merge queue — evolved from super-ralph lineage |
+| ergasterion | — | Go | ἐργαστήριον — the place where the work is forged. Parent of the three: |
+| hestia | — | — | ἑστία — the fire that never goes out. The durable workflow plane of the ergasterion workshop. |
+| kairos | 25104 | TypeScript | The opportune moment — the 2-second rule, first-class: every command an agent |
 | kappa | — | TypeScript | Master project holding the kappa forks on this box (awrawr-pc estate). This |
 | keryx | — | — | — |
 | kilo | 25000 | TypeScript | npm install -g @kilocode/cli |
@@ -23,7 +24,6 @@ is symlinked into `~/.local/bin` and pinned by the estate-ops manifest.
 | kryptos | 25109 | TypeScript | — |
 | muse | — | Python | Talk to your personal muse.ai AI agent from the terminal. |
 | opsis | 25130 | — | Headed browser automation for the fleet: one MCP server, one persistent Chromium, zero dead sessi... |
-| mimetite | — | TypeScript | Every flock comes home to mimetite — where the birds settle, perch, and |
 | pylae | — | Rust | — |
 | sigma | — | TypeScript | English | 中文 |
 | skopos | 25130,25154 | TypeScript | One persistent headed Chromium for the whole mesh, plus the browserless server |
