@@ -1,0 +1,32 @@
+[
+  {
+    "name": "kappa-ext",
+    "url": "https://github.com/toxicwind/kappa-extensions",
+    "ref": "main"
+  },
+  {
+    "name": "opencode",
+    "url": "https://github.com/anomalyco/opencode-extensions",
+    "ref": "main"
+  },
+  {
+    "name": "kappa-context",
+    "url": "file:///home/toxic/pens/olympus/products/kappa/extensions/kappa-context/index.ts",
+    "manifest": {
+      "id": "kappa-context",
+      "version": "1.0.0",
+      "type": "tool",
+      "entry": "/home/toxic/pens/olympus/products/kappa/extensions/kappa-context/index.ts"
+    }
+  },
+  {
+    "name": "kappa-compact",
+    "url": "file:///home/toxic/pens/olympus/products/kappa/extensions/kappa-compact/index.ts",
+    "manifest": {
+      "id": "kappa-compact",
+      "version": "1.0.0",
+      "type": "hook",
+      "entry": "/home/toxic/pens/olympus/products/kappa/extensions/kappa-compact/index.ts"
+    }
+  }
+]

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+exec node "/home/toxic/.config/kappa/skills/kappa-hindsight/src/cli.ts" "$@"

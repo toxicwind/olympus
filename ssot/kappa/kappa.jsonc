@@ -1,0 +1,606 @@
+{
+  "provider": {
+    "freeinference": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "FreeInference (HarvardMadSys Lab)",
+      "options": {
+        "baseURL": "https://freeinference.org/v1",
+        "apiKey": "{env:FREEINFERENCE_API_KEY}",
+        "maxConcurrency": 2,
+        "unlimitedRetryOn429": true
+      },
+      "http": {
+        "fingerprint": "honest"
+      },
+      "models": {
+        "glm-5.3-flash": {
+          "name": "GLM-5.3 Flash",
+          "cost": {
+            "input": 0.3,
+            "output": 1,
+            "cache_read": 0.06,
+            "cache_write": 0.3
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 131072
+          }
+        },
+        "minimax-m3": {
+          "name": "MiniMax M3",
+          "cost": {
+            "input": 0.5,
+            "output": 2,
+            "cache_read": 0.3,
+            "cache_write": 0.5
+          },
+          "limit": {
+            "context": 1048576,
+            "output": 131072
+          }
+        },
+        "qwen3.6-35b": {
+          "name": "Qwen3.6 35B",
+          "cost": {
+            "input": 0.08,
+            "output": 0.28,
+            "cache_read": 0.01,
+            "cache_write": 0.08
+          },
+          "limit": {
+            "context": 262144,
+            "output": 8192
+          }
+        },
+        "deepseek-v4-flash": {
+          "name": "DeepSeek V4 Flash (high speed)",
+          "cost": {
+            "input": 0.44,
+            "output": 1.32,
+            "cache_read": 0.014,
+            "cache_write": 0.44
+          },
+          "limit": {
+            "context": 1000000,
+            "output": 393216
+          }
+        }
+      }
+    },
+    "rhodochrosite": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Rhodochrosite (estate multi-provider gateway :25193)",
+      "options": {
+        "baseURL": "http://127.0.0.1:25193/v1",
+        "apiKey": "{env:RHODOCHROSITE_API_KEY}"
+      },
+      "models": {
+        "estate/free": {
+          "name": "Rhodochrosite · estate/free (zero-cost cloud strategy)",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        },
+        "estate/auto": {
+          "name": "Rhodochrosite · estate/auto (Elo + health smart router)",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        },
+        "estate/fast": {
+          "name": "Rhodochrosite · estate/fast (lowest-latency cloud race)",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        },
+        "estate/code": {
+          "name": "Rhodochrosite · estate/code (coding specialist route)",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        },
+        "estate/reasoning": {
+          "name": "Rhodochrosite · estate/reasoning (deep reasoning route)",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        },
+        "qwen3.6-35b": {
+          "name": "Rhodochrosite · Qwen3.6 35B",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        },
+        "deepseek-v4-flash": {
+          "name": "Rhodochrosite · DeepSeek V4 Flash",
+          "limit": {
+            "context": 1000000,
+            "output": 131072
+          }
+        },
+        "glm-5.3-flash": {
+          "name": "Rhodochrosite · GLM-5.3 Flash",
+          "limit": {
+            "context": 1000000,
+            "output": 131072
+          }
+        },
+        "minimax-m3": {
+          "name": "Rhodochrosite · MiniMax M3",
+          "limit": {
+            "context": 1048576,
+            "output": 131072
+          }
+        }
+      }
+    },
+    "nim": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "NVIDIA NIM via rhodochrosite gateway (nim-proxy :8000 retired 2026-10-09 — see mimetite src/data.ts; :25193 = rhodochrosite)",
+      "options": {
+        "baseURL": "http://127.0.0.1:25193/v1",
+        "apiKey": "{env:RHODOCHROSITE_API_KEY}",
+        "timeout": false
+      },
+      "models": {
+        "z-ai/glm-5.3-flash": {
+          "name": "GLM-5.3 Flash MAX",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "options": {
+            "temperature": 0.6,
+            "top_p": 0.95
+          }
+        },
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "name": "Super 120B MAX",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          },
+          "options": {
+            "temperature": 0.6,
+            "top_p": 0.95
+          }
+        }
+      }
+    },
+    "atria": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Atria (Atria-Dawn · 512K context)",
+      "options": {
+        "baseURL": "https://api.atria-asi.ai/v1",
+        "apiKey": "{env:ATRIA_API_KEY}"
+      },
+      "models": {
+        "Atria-Dawn": {
+          "name": "Atria-Dawn",
+          "limit": {
+            "context": 512000,
+            "output": 8192
+          }
+        }
+      }
+    },
+    "agele": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Agele (ἀγέλη — estate local llama-swap :25100)",
+      "options": {
+        "baseURL": "http://127.0.0.1:25100/v1",
+        "apiKey": "agele-local"
+      },
+      "models": {
+        "fast": {
+          "name": "fast"
+        },
+        "small": {
+          "name": "small"
+        },
+        "medium": {
+          "name": "medium"
+        },
+        "long": {
+          "name": "long"
+        },
+        "tiny": {
+          "name": "tiny"
+        },
+        "code": {
+          "name": "code"
+        },
+        "classify": {
+          "name": "classify"
+        },
+        "qwen-flash-256k": {
+          "name": "qwen-flash-256k",
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          }
+        },
+        "qwen-flash-128k": {
+          "name": "qwen-flash-128k",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          }
+        },
+        "qwen-flash-96k": {
+          "name": "qwen-flash-96k",
+          "limit": {
+            "context": 98304,
+            "output": 16384
+          }
+        },
+        "qwen-flash-64k": {
+          "name": "qwen-flash-64k",
+          "limit": {
+            "context": 65536,
+            "output": 8192
+          }
+        },
+        "qwen-flash-mtp-128k": {
+          "name": "qwen-flash-mtp-128k",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          }
+        },
+        "qwen-flash-mtp-64k": {
+          "name": "qwen-flash-mtp-64k",
+          "limit": {
+            "context": 65536,
+            "output": 8192
+          }
+        },
+        "qwen-flash-da-128k": {
+          "name": "qwen-flash-da-128k",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          }
+        },
+        "gemma-128k": {
+          "name": "gemma-128k",
+          "limit": {
+            "context": 131072,
+            "output": 32768
+          }
+        },
+        "gemma-96k": {
+          "name": "gemma-96k",
+          "limit": {
+            "context": 98304,
+            "output": 16384
+          }
+        },
+        "gemma-64k": {
+          "name": "gemma-64k",
+          "limit": {
+            "context": 65536,
+            "output": 8192
+          }
+        },
+        "gemma-4-12b": {
+          "name": "gemma-4-12b"
+        },
+        "gemma-4-12b-unified": {
+          "name": "gemma-4-12b-unified"
+        },
+        "gemma-4-12b-uncensored": {
+          "name": "gemma-4-12b-uncensored"
+        },
+        "exaone-iq4xs": {
+          "name": "exaone-iq4xs"
+        },
+        "exaone-q4km": {
+          "name": "exaone-q4km"
+        },
+        "exaone-q5km": {
+          "name": "exaone-q5km"
+        },
+        "exaone-q6k": {
+          "name": "exaone-q6k"
+        },
+        "exaone-q80": {
+          "name": "exaone-q80"
+        },
+        "exaone-1.2b-iq4xs-32k": {
+          "name": "exaone-1.2b-iq4xs-32k",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          }
+        },
+        "kimi-auto": {
+          "name": "kimi-auto"
+        },
+        "oracle-judge-local": {
+          "name": "oracle-judge-local"
+        },
+        "strange-64k": {
+          "name": "strange-64k",
+          "limit": {
+            "context": 65536,
+            "output": 8192
+          }
+        },
+        "uncensored": {
+          "name": "uncensored"
+        }
+      }
+    }
+  },
+  "$schema": "https://app.kappa.ai/config.json",
+  "model": "freeinference/qwen3.6-35b",
+  "default_agent": "code",
+  "autoupdate": true,
+  "share": "disabled",
+  "username": "toxic",
+  "watcher": {
+    "ignore": [
+      "**/.git/**",
+      "**/node_modules/**",
+      "**/target/**",
+      "**/build/**",
+      "**/dist/**",
+      "**/.venv/**",
+      "**/__pycache__/**"
+    ]
+  },
+  "formatter": {
+    "prettier": {
+      "disabled": false,
+      "command": [
+        "npx",
+        "--no-install",
+        "prettier",
+        "--write",
+        "$FILE"
+      ],
+      "extensions": [
+        ".js",
+        ".jsx",
+        ".ts",
+        ".tsx",
+        ".json",
+        ".css",
+        ".md",
+        ".yaml",
+        ".yml"
+      ]
+    },
+    "gofmt": {
+      "disabled": false,
+      "command": [
+        "gofmt",
+        "-w",
+        "$FILE"
+      ],
+      "extensions": [
+        ".go"
+      ]
+    },
+    "rustfmt": {
+      "disabled": false,
+      "command": [
+        "rustfmt",
+        "$FILE"
+      ],
+      "extensions": [
+        ".rs"
+      ]
+    }
+  },
+  "lsp": {
+    "typescript-language-server": {
+      "command": [
+        "npx",
+        "--no-install",
+        "typescript-language-server",
+        "--stdio"
+      ],
+      "extensions": [
+        ".ts",
+        ".tsx"
+      ],
+      "initialization": {
+        "preferences": {
+          "includeCompletionsForModuleExports": true
+        }
+      }
+    },
+    "pyright": {
+      "command": [
+        "pyright-langserver",
+        "--stdio"
+      ],
+      "extensions": [
+        ".py"
+      ]
+    },
+    "gopls": {
+      "command": [
+        "gopls"
+      ],
+      "extensions": [
+        ".go"
+      ]
+    },
+    "rust-analyzer": {
+      "command": [
+        "rust-analyzer"
+      ],
+      "extensions": [
+        ".rs"
+      ]
+    }
+  },
+  "mcp": {
+    "timeout": {
+      "startup": 30000,
+      "request": 60000
+    },
+    "servers": {
+      "filesystem": {
+        "type": "local",
+        "command": [
+          "node",
+          "/home/toxic/.npm/_npx/a3241bba59c344f5/node_modules/@modelcontextprotocol/server-filesystem/dist/index.js",
+          "/home/toxic"
+        ],
+        "enabled": true,
+        "timeout": 30000
+      }
+    }
+  },
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "keep": {
+      "tokens": 20000
+    },
+    "buffer": 4000
+  },
+  "skills": {
+    "paths": [
+      "/home/toxic/pens/estate/grasp-hub/skills",
+      "~/.config/kappa/skills",
+      "~/.claude/skills"
+    ],
+    "urls": []
+  },
+  "instructions": [
+    "~/.config/kappa/AGENTS.md"
+  ],
+  "permission": {
+    "*": "allow",
+    "edit": "allow",
+    "bash": {
+      "*": "ask",
+      "ls *": "allow",
+      "pitchfork *": "allow",
+      "head *": "allow",
+      "grep *": "allow",
+      "ss *": "allow",
+      "curl *": "allow",
+      "which *": "allow",
+      "pacman *": "allow",
+      "fd *": "allow",
+      "cat *": "allow",
+      "git -C *": "allow",
+      "find *": "allow",
+      "echo *": "allow",
+      "python3 *": "allow",
+      "file *": "allow",
+      "kappa *": "allow",
+      "sed *": "allow",
+      "tail *": "allow",
+      "sqlite3 *": "allow",
+      "strings *": "allow"
+    },
+    "webfetch": "allow",
+    "websearch": "ask",
+    "read": {
+      "*": "allow"
+    },
+    "filesystem_*": "allow",
+    "filesystem_list_directory": {
+      "*": "allow"
+    },
+    "thresher_call_tool_read": {
+      "*": "allow"
+    },
+    "ffs_ffs_find": {
+      "*": "allow"
+    },
+    "ffs_ffs_grep": {
+      "*": "allow"
+    },
+    "ffs_ffs_read": {
+      "*": "allow"
+    },
+    "thresher_retrieve_tools": {
+      "*": "allow"
+    },
+    "filesystem_get_file_info": {
+      "*": "allow"
+    },
+    "ffs_ffs_map": {
+      "*": "allow"
+    },
+    "filesystem_read_text_file": {
+      "*": "allow"
+    },
+    "external_directory": {
+      "/home/toxic/pens/barn/corral/delendai/packages/core/src/lib/project/*": "allow",
+      "/home/toxic/pens/olympus/products/kappa/kappa-code/*": "allow"
+    },
+    "ffs_ffs_multi_grep": {
+      "*": "allow"
+    }
+  },
+  "small_model": "freeinference/qwen3.6-35b",
+  "snapshot": true,
+  "attachment": {
+    "image": {
+      "auto_resize": true,
+      "max_width": 2000,
+      "max_height": 2000,
+      "max_base64_bytes": 5242880
+    }
+  },
+  "shell": "/bin/bash",
+  "references": {},
+  "marketplace": [
+    {
+      "name": "kappa-context",
+      "url": "file:///home/toxic/pens/olympus/products/kappa/extensions/kappa-context/index.ts",
+      "manifest": {
+        "id": "kappa-context",
+        "version": "1.0.0",
+        "type": "tool",
+        "entry": "/home/toxic/pens/olympus/products/kappa/extensions/kappa-context/index.ts"
+      }
+    },
+    {
+      "name": "kappa-compact",
+      "url": "file:///home/toxic/pens/olympus/products/kappa/extensions/kappa-compact/index.ts",
+      "manifest": {
+        "id": "kappa-compact",
+        "version": "1.0.0",
+        "type": "hook",
+        "entry": "/home/toxic/pens/olympus/products/kappa/extensions/kappa-compact/index.ts"
+      }
+    }
+  ],
+  "agent": {
+    "general": {
+      "model": "freeinference/qwen3.6-35b"
+    },
+    "explore": {
+      "model": "freeinference/qwen3.6-35b"
+    },
+    "code": {
+      "model": "freeinference/qwen3.6-35b"
+    },
+    "plan": {
+      "model": "freeinference/qwen3.6-35b"
+    },
+    "subagent": {
+      "model": "freeinference/qwen3.6-35b"
+    }
+  },
+  "indexing": {
+    "enabled": true,
+    "roots": ["/home/toxic/pens", "/home/toxic/pens/estate"]
+  }
+}

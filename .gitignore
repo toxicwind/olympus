@@ -6,3 +6,6 @@
 !mise.toml
 !bin/
 !bin/**
+!ssot/
+!ssot/kappa/
+!ssot/kappa/**
