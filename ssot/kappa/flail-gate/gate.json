@@ -1,6 +1,6 @@
 {
-  "proseTokenBudget": 900,
-  "pivotBudget": 2,
+  "proseTokenBudget": 600,
+  "pivotBudget": 1,
   "repetitionJaccard": 0.82,
   "raceSeconds": 8,
   "narration": {
