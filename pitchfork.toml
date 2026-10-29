@@ -14,7 +14,7 @@ dir = "/home/toxic/pens/olympus/products/skopos"
 mise = true
 
 [daemons.lambda]
-run = "exec /home/toxic/pens/barn/estate-ops/claim-port 25126 /home/toxic/pens/olympus/products/lambda/apps/kimi-code/dist/main.mjs web --no-open --port 25126"
+run = "exec /home/toxic/pens/estate/products/estate-ops/claim-port 25126 /home/toxic/pens/olympus/products/lambda/apps/kimi-code/dist/main.mjs web --no-open --port 25126"
 auto = ["start"]
 retry = true
 ready_http = "http://127.0.0.1:25126/health"
