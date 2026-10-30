@@ -340,7 +340,7 @@
     }
   },
   "$schema": "https://app.kappa.ai/config.json",
-  "model": "freeinference/qwen3.6-35b",
+  "model": "freeinference/deepseek-v4-flash",
   "default_agent": "code",
   "autoupdate": true,
   "share": "disabled",
@@ -482,7 +482,9 @@
     "~/.config/kappa/AGENTS.md"
   ],
   "permission": {
-    "*": "allow",
+    "*": {
+      "*": "allow"
+    },
     "edit": "allow",
     "bash": {
       "*": "ask",
@@ -505,7 +507,8 @@
       "sed *": "allow",
       "tail *": "allow",
       "sqlite3 *": "allow",
-      "strings *": "allow"
+      "strings *": "allow",
+      "tau *": "allow"
     },
     "webfetch": "allow",
     "websearch": "ask",
@@ -577,14 +580,28 @@
       "model": "freeinference/qwen3.6-35b"
     }
   },
+  "plugin": [
+    "@kappacode/kappa-indexing"
+  ],
   "indexing": {
     "enabled": true,
-    "roots": ["/home/toxic/pens", "/home/toxic/pens/estate"],
+    "roots": [
+      "/home/toxic/pens",
+      "/home/toxic/pens/estate"
+    ],
     "provider": "openai-compatible",
-    "model": "bge-m3",
     "openai-compatible": {
       "baseUrl": "https://freeinference.org/v1",
       "apiKey": "{env:FREEINFERENCE_API_KEY}"
-    }
+    },
+    "model": "bge-m3",
+    "vectorStore": "qdrant",
+    "qdrant": {
+      "url": "http://127.0.0.1:25133"
+    },
+    "searchMinScore": 0.23,
+    "searchMaxResults": 433,
+    "embeddingBatchSize": 30,
+    "scannerMaxBatchRetries": 1
   }
 }
