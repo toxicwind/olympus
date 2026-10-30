@@ -508,7 +508,10 @@
       "tail *": "allow",
       "sqlite3 *": "allow",
       "strings *": "allow",
-      "tau *": "allow"
+      "tau *": "allow",
+      "wc *": "allow",
+      "sort *": "allow",
+      "uniq *": "allow"
     },
     "webfetch": "allow",
     "websearch": "ask",
