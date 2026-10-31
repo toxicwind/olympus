@@ -6,7 +6,7 @@
 import { spawnSync } from "node:child_process";
 
 const THRESHER = "/home/toxic/pens/ranch/thresher/bin/thresher";
-const CFG = "/home/toxic/estate/ranch/thresher/mcp_config.json";
+const CFG = "/home/toxic/pens/estate/ranch/thresher/mcp_config.json";
 
 function call(name: string, args: unknown, read: boolean): string {
   const r = spawnSync(

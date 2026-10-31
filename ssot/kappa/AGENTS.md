@@ -2,7 +2,7 @@
 
 > **CURATED, not accumulated** ("The Developer as Curator", ACM 2026): a shallow
 > root here + nested `AGENTS.md` files where a domain owns its rules beats a
-> wall-file that drifts. This file is **authoritative**; `/home/toxic/estate/AGENTS.md`
+> wall-file that drifts. This file is **authoritative**; `/home/toxic/pens/estate/AGENTS.md`
 > mirrors `/home/toxic/AGENTS.md`. Nested files refine, never contradict, these.
 >
 > **YOU ARE TAU (`τ`) OR KAPPA (`κ`) — OLYMPUS CODING AGENTS.** This is YOUR
@@ -230,15 +230,15 @@ _Verified runtime anomalies from 2026-10-23. Each gets a capability-contract tes
 
 | #   | Anomaly                               | Essence                                                                                                                        | Dossier                                                                                                                                                          |
 | --- | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | **Reasoning-budget trap**             | `max_tokens=500` + `reasoning_effort=high` → finish=length, zero content, `reasoning_tokens=max_tokens` — not an infinite loop | `/home/toxic/estate/docs/anomalies/2026-10-23/endpoint-probe-results.md`                                                                                         |
-| 2   | **Catalog lies**                      | minimax `thinking` → HTTP 400; qwen3.6-35b has `reasoning: false` + empty `thinking` → `effort` silently ignored               | `/home/toxic/estate/docs/anomalies/2026-10-23/effort-param-audit.md`                                                                                             |
-| 3   | **Model-identity chain**              | CLI tag ≠ served model; resolved model is the chain through catalog → models.yml → overrides → modelRoles → frontmatter        | `/home/toxic/estate/docs/anomalies/2026-10-23/effort-param-audit.md`                                                                                             |
-| 4   | **Single-lane observer effect**       | 429 from a probe misread as "key lacks access" while workers succeeded on the same key+model simultaneously                    | `/home/toxic/estate/docs/anomalies/2026-10-23/endpoint-probe-results.md`                                                                                         |
-| 5   | **Front door vs exec lane**           | Health/OAuth returns 401 (alive) while chat completions return 502/empty (dead backend) — a route-contract divergence          | `/home/toxic/estate/docs/anomalies/2026-10-23/gem-forensic/funnel-443-diagnosis.txt + /home/toxic/estate/docs/anomalies/2026-10-23/gem-forensic/FUNNEL-FIXED.md` |
-| 6   | **Pitchfork two-truth problem**       | Monolith is live truth; 103 pitchfork.d fragments are dead litter; `generate.ts` retired for destroying hand-tuned config      | `/home/toxic/estate/docs/anomalies/2026-10-23/pitchfork-convention-report.md`                                                                                    |
-| 7   | **Fleet substrate failure**           | One malformed toolchain string (`bun:path@true`) mass-killed 65 pitchfork daemons; disk at 96% exacerbated                     | `/home/toxic/estate/docs/anomalies/2026-10-23/estate-recovery3-state.md` + `estate-recovery-report.md`                                                           |
-| 8   | **External scheduled readers**        | MacBook Claude Desktop tasks hold tunnel grants with no on-box inventory; provenance lives outside the estate box              | `/home/toxic/estate/docs/anomalies/2026-10-23/gem-forensic/SCHEDULED-TASKS-FOUND.md`                                                                             |
-| 9   | **Latency-only benchmark corruption** | `tps:0` rows are handshakes not completions — zero-token benchmark entries must be rejected from Pareto frontiers              | `/home/toxic/estate/docs/anomalies/2026-10-23/endpoint-probe-results.md`                                                                                         |
+| 1   | **Reasoning-budget trap**             | `max_tokens=500` + `reasoning_effort=high` → finish=length, zero content, `reasoning_tokens=max_tokens` — not an infinite loop | `/home/toxic/pens/estate/docs/anomalies/2026-10-23/endpoint-probe-results.md`                                                                                         |
+| 2   | **Catalog lies**                      | minimax `thinking` → HTTP 400; qwen3.6-35b has `reasoning: false` + empty `thinking` → `effort` silently ignored               | `/home/toxic/pens/estate/docs/anomalies/2026-10-23/effort-param-audit.md`                                                                                             |
+| 3   | **Model-identity chain**              | CLI tag ≠ served model; resolved model is the chain through catalog → models.yml → overrides → modelRoles → frontmatter        | `/home/toxic/pens/estate/docs/anomalies/2026-10-23/effort-param-audit.md`                                                                                             |
+| 4   | **Single-lane observer effect**       | 429 from a probe misread as "key lacks access" while workers succeeded on the same key+model simultaneously                    | `/home/toxic/pens/estate/docs/anomalies/2026-10-23/endpoint-probe-results.md`                                                                                         |
+| 5   | **Front door vs exec lane**           | Health/OAuth returns 401 (alive) while chat completions return 502/empty (dead backend) — a route-contract divergence          | `/home/toxic/pens/estate/docs/anomalies/2026-10-23/gem-forensic/funnel-443-diagnosis.txt + /home/toxic/pens/estate/docs/anomalies/2026-10-23/gem-forensic/FUNNEL-FIXED.md` |
+| 6   | **Pitchfork two-truth problem**       | Monolith is live truth; 103 pitchfork.d fragments are dead litter; `generate.ts` retired for destroying hand-tuned config      | `/home/toxic/pens/estate/docs/anomalies/2026-10-23/pitchfork-convention-report.md`                                                                                    |
+| 7   | **Fleet substrate failure**           | One malformed toolchain string (`bun:path@true`) mass-killed 65 pitchfork daemons; disk at 96% exacerbated                     | `/home/toxic/pens/estate/docs/anomalies/2026-10-23/estate-recovery3-state.md` + `estate-recovery-report.md`                                                           |
+| 8   | **External scheduled readers**        | MacBook Claude Desktop tasks hold tunnel grants with no on-box inventory; provenance lives outside the estate box              | `/home/toxic/pens/estate/docs/anomalies/2026-10-23/gem-forensic/SCHEDULED-TASKS-FOUND.md`                                                                             |
+| 9   | **Latency-only benchmark corruption** | `tps:0` rows are handshakes not completions — zero-token benchmark entries must be rejected from Pareto frontiers              | `/home/toxic/pens/estate/docs/anomalies/2026-10-23/endpoint-probe-results.md`                                                                                         |
 
 _Charter: every anomaly gets a capability-contract test before its fix is trusted._
 
@@ -263,7 +263,7 @@ One rule: **products own their entrypoints; bins merely point at them.**
   target. A broken symlink is a FAIL, never a WARN. When a product moves, fix the
   manifest first, then the link.
 - **No hardcoded product paths inside shims.** A shim resolves its target
-  through the manifest or `pens/`; a literal `/home/toxic/estate/...` path to a
+  through the manifest or `pens/`; a literal `/home/toxic/pens/estate/...` path to a
   product is a bug, not a fallback.
 - **Retired products are deleted, not relinked** (super-ralph, roost, shep,
   flock). No backup-binary repointing: dead link = remove + manifest archived
@@ -273,14 +273,14 @@ One rule: **products own their entrypoints; bins merely point at them.**
 
 | Path                                   | Owner                                                   |
 | -------------------------------------- | ------------------------------------------------------- |
-| `/home/toxic/estate/AGENTS.md`         | estate control-plane: repos, skills, azurite, pitchfork |
-| `/home/toxic/estate/ranch/*/AGENTS.md` | each ranch component repo's own contract                |
+| `/home/toxic/pens/estate/AGENTS.md`         | estate control-plane: repos, skills, azurite, pitchfork |
+| `/home/toxic/pens/estate/ranch/*/AGENTS.md` | each ranch component repo's own contract                |
 
 Nested files declare what they refine and where; none repeat or contradict these.
 
 ## Anomaly program D-2026-10-27 (fleet restoration — verified live)
 
-_Verified 2026-10-27 with real traffic; dossier: `/home/toxic/estate/docs/anomalies/2026-10-27/fleet-restoration.md`._
+_Verified 2026-10-27 with real traffic; dossier: `/home/toxic/pens/estate/docs/anomalies/2026-10-27/fleet-restoration.md`._
 
 | #   | Anomaly                            | Essence                                                                                                                                                       | Fix (committed)                                                                              |
 | --- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
@@ -317,7 +317,7 @@ One rule: **products own their entrypoints; bins merely point at them.**
   target. A broken symlink is a FAIL, never a WARN. When a product moves, fix the
   manifest first, then the link.
 - **No hardcoded product paths inside shims.** A shim resolves its target
-  through the manifest or `pens/`; a literal `/home/toxic/estate/...` path to a
+  through the manifest or `pens/`; a literal `/home/toxic/pens/estate/...` path to a
   product is a bug, not a fallback.
 - **Retired products are deleted, not relinked** (super-ralph, roost, shep,
   flock). No backup-binary repointing: dead link = remove + manifest archived
@@ -327,8 +327,8 @@ One rule: **products own their entrypoints; bins merely point at them.**
 
 | Path                                   | Owner                                                   |
 | -------------------------------------- | ------------------------------------------------------- |
-| `/home/toxic/estate/AGENTS.md`         | estate control-plane: repos, skills, azurite, pitchfork |
-| `/home/toxic/estate/ranch/*/AGENTS.md` | each ranch component repo's own contract                |
+| `/home/toxic/pens/estate/AGENTS.md`         | estate control-plane: repos, skills, azurite, pitchfork |
+| `/home/toxic/pens/estate/ranch/*/AGENTS.md` | each ranch component repo's own contract                |
 
 Nested files declare what they refine and where; none repeat or contradict these.
 

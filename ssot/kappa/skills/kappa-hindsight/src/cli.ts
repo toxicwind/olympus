@@ -24,9 +24,9 @@ import { join } from "node:path";
 const HOME = homedir();
 const STORE = join(HOME, ".local/share/kappa/kappa-main.db");
 const ORACLE_LEDGER =
-  "/home/toxic/estate/ranch/squawk/oracle/ledger/ledger.jsonl";
+  "/home/toxic/pens/estate/ranch/squawk/oracle/ledger/ledger.jsonl";
 const DIRECTIVES =
-  "/home/toxic/estate/ranch/hatch/kite/agents/ember/directives.md";
+  "/home/toxic/pens/estate/ranch/hatch/kite/agents/ember/directives.md";
 const SQUAWK_URL = process.env.SQUAWK_URL || "http://127.0.0.1:25120";
 const SQUAWK_TOKEN = (() => {
   try {
