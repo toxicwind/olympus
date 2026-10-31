@@ -24,8 +24,7 @@
 | **pinax** | πίναξ | tablet / catalog | pinax | [toxicwind/pinax](https://github.com/toxicwind/pinax) | live | `pens/olympus/products/pinax` |
 | **agon** | ἀγών | contest / race | agon | [toxicwind/agon](https://github.com/toxicwind/agon) | live | `pens/olympus/products/agon` |
 | **antilogos** | ἀντίλογος | counter-argument / debate | antilogos | [toxicwind/antilogos](https://github.com/toxicwind/antilogos) | live | `pens/olympus/products/antilogos` |
-| **pylae** | πύλαι | gates | pylae | [toxicwind/pylae](https://github.com/toxicwind/pylae) | live | `pens/olympus/products/pylae` |
-| **propylon** | πρόπυλον | monumental gateway | propylon | [toxicwind/propylon](https://github.com/toxicwind/propylon) | live | `pens/olympus/products/propylon` |
+|| **propylon** | πρόπυλον | monumental gateway | propylon | [toxicwind/propylon](https://github.com/toxicwind/propylon) | live | `pens/olympus/products/propylon` |
 | **opsis** | ὄψις | sight / appearance | opsis | [toxicwind/opsis](https://github.com/toxicwind/opsis) | live | `pens/olympus/products/opsis` |
 | **didymos** | δίδυμος | twin | didymos | [toxicwind/didymos](https://github.com/toxicwind/didymos) | live | `pens/olympus/products/didymos` |
 | **chronos-forge** | χρόνος | time | chronos-forge | [toxicwind/chronos-forge](https://github.com/toxicwind/chronos-forge) | live | `pens/olympus/products/chronos-forge` |
