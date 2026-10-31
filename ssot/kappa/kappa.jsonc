@@ -445,10 +445,9 @@
     }
   },
   "mcp": {
-    "timeout": {
-      "startup": 30000,
-      "request": 60000
-    },
+    // kappa runtime has no mcp.timeout consumer (V1 lowering writes
+    // experimental.mcp_timeout that nothing reads) — block removed 2026-10-31;
+    // it only produced "Omitted native setting" startup warnings.
     "servers": {
       "filesystem": {
         "type": "local",
@@ -511,7 +510,8 @@
       "tau *": "allow",
       "wc *": "allow",
       "sort *": "allow",
-      "uniq *": "allow"
+      "uniq *": "allow",
+      "ps *": "allow"
     },
     "webfetch": "allow",
     "websearch": "ask",
@@ -598,6 +598,7 @@
       "apiKey": "{env:FREEINFERENCE_API_KEY}"
     },
     "model": "bge-m3",
+    "dimension": 1024,
     "vectorStore": "qdrant",
     "qdrant": {
       "url": "http://127.0.0.1:25133"

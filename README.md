@@ -1,63 +1,37 @@
 # olympus — the home of the Greek-coded products
 
-One of the estate's five pens (`pens/{estate,geode,barn,ranch,olympus}`).
-Every pen has the same shape: `products/` for peer standalone checkouts,
-`docs/` for pen-owned documentation, and a `bin/` entrypoint surface that
-is symlinked into `~/.local/bin` and pinned by the estate-ops manifest.
+> olympus is the registry that HOLDS the estate's Greek-coded product lineage —
+> the pantheon of named components: τ tau, κ kappa, skopos, kilo, muse, keryx,
+> hodos, and their kin. Like `estate-brain` holds the persona fleet, olympus
+> holds the Greek codename family as one authoritative, categorized whole.
 
-## Products
+"Where the gods reside."
 
-| Product | Port | Language | Role |
-| --- | --- | --- | --- |
-| agon | — | Python | The empirical code contest. Race candidate code strategies against each |
-| antilogos | — | JavaScript | Counter-argument to the first answer. An adversarial verification engine: |
-| chronos-forge | — | TypeScript | A repo-scoped Mixture-of-Experts agent backplane with an endless, |
-| didymos | 25202 | — | First-class Gemini API MCP server for the mesh: a self-healing multi-key pool with round-robin + ... |
-| ergane | — | TypeScript | Ticket-driven development & speculative merge queue — evolved from super-ralph lineage |
-| ergasterion | — | Go | ἐργαστήριον — the place where the work is forged. Parent of the three: |
-| hestia | — | — | ἑστία — the fire that never goes out. The durable workflow plane of the ergasterion workshop. |
-| kairos | 25104 | TypeScript | The opportune moment — the 2-second rule, first-class: every command an agent |
-| kappa | — | TypeScript | Master project holding the kappa forks on this box (awrawr-pc estate). This |
-| keryx | — | — | — |
-| kilo | 25000 | TypeScript | npm install -g @kilocode/cli |
-| kleio | — | TypeScript | The session historian — one audit, every agent engine. |
-| kryptos | 25109 | TypeScript | — |
-| muse | — | Python | Talk to your personal muse.ai AI agent from the terminal. |
-| opsis | 25130 | — | Headed browser automation for the fleet: one MCP server, one persistent Chromium, zero dead sessi... |
-| pylae | — | Rust | — |
-| sigma | — | TypeScript | English | 中文 |
-| skopos | 25130,25154 | TypeScript | One persistent headed Chromium for the whole mesh, plus the browserless server |
-| tau | 25100,25101,25102,25103,25104,25105,25106,25107,25108,25109,25110,25111,25112,25113,25114,25115,25116,25117,25118,25120,25121,25122,25123,25124,25125,25126,25127,25128,25129,25130,25131,25132,25133,25134,25135,25136,25137,25138,25139,25140,25141,25142,25143,25144,25145,25146,25147,25148,25149,25150,25152,25153,25160,25161,25163,25180,25181,25189,25190,25191,25192,25193,25194,25195,25196,25197,25198,25199,25201,25202,25203,25204,25205,25206,25207,25208,25209,25210,25211,25212,25219 | Rust | A coding agent that runs on your machine, in your processes, on your filesystem. |
-| theta | — | TypeScript | CONFIDENTIAL / PRIVATE. This package is the estate's EAP (Gemini Tool |
+## The pantheon (the Greek-coded products)
 
-## Layout
-```text
-olympus/
-  .gitignore    kitchen-sink `*` + whitelist (submoduleless doctrine)
-  README.md     this file — role, member table, ports, languages
-  LICENSE
-  package.json
-  mise.toml
-  AGENTS.md
-  bin/          entrypoint symlink surface -> ~/.local/bin
-  products/     peer standalone checkouts (auto-ignored, never tracked)
-  docs/         pen-owned documentation
-```
+| Codename | Greek root | Meaning | Product | GitHub Repo | Status | Where it lives (Greek pen, Olympus products) |
+| --- | --- | --- | --- | --- | --- | --- |
+| **tau** | τ | Greek letter | tau | [toxicwind/tau](https://github.com/toxicwind/tau) | live | `pens/olympus/products/tau` |
+| **kappa** | κ | Greek letter | kappa | [toxicwind/kappa-code](https://github.com/toxicwind/kappa-code) | live | `pens/olympus/products/kappa` |
+| **skopos** | σκοπός | watcher / lookout / scout | skopos | [toxicwind/skopos](https://github.com/toxicwind/skopos) | live | `pens/olympus/products/skopos` |
+| **kilo** | χίλιοι | thousand | kilo | [toxicwind/kilo](https://github.com/toxicwind/kilo) | live | `pens/olympus/products/kilo` |
+| **muse** | μοῦσα | the muse (inspiration) | muse | [toxicwind/muse-cli](https://github.com/toxicwind/muse-cli) | live | `pens/olympus/products/muse` |
+| **keryx** | κῆρυξ | herald | keryx | [toxicwind/keryx](https://github.com/toxicwind/keryx) | live | `pens/olympus/products/keryx` |
+| **hodos** | ὁδός | way / road | hodos | [toxicwind/hodos](https://github.com/toxicwind/hodos) | live | `pens/olympus/products/hodos` |
+| **kairos** | καιρός | the opportune moment | kairos | [toxicwind/kairos](https://github.com/toxicwind/kairos) | live | `pens/olympus/products/kairos` |
+| **kryptos** | κρυπτός | hidden | kryptos | [toxicwind/kryptos](https://github.com/toxicwind/kryptos) | live | `pens/olympus/products/kryptos` |
+| **agele** | ἀγέλη | herd (of cattle) | agele | [toxicwind/agele](https://github.com/toxicwind/agele) | live | `pens/olympus/products/agele` |
+| **pinax** | πίναξ | tablet / catalog | pinax | [toxicwind/pinax](https://github.com/toxicwind/pinax) | live | `pens/olympus/products/pinax` |
+| **agon** | ἀγών | contest / race | agon | [toxicwind/agon](https://github.com/toxicwind/agon) | live | `pens/olympus/products/agon` |
+| **antilogos** | ἀντίλογος | counter-argument / debate | antilogos | [toxicwind/antilogos](https://github.com/toxicwind/antilogos) | live | `pens/olympus/products/antilogos` |
+| **pylae** | πύλαι | gates | pylae | [toxicwind/pylae](https://github.com/toxicwind/pylae) | live | `pens/olympus/products/pylae` |
+| **propylon** | πρόπυλον | monumental gateway | propylon | [toxicwind/propylon](https://github.com/toxicwind/propylon) | live | `pens/olympus/products/propylon` |
+| **opsis** | ὄψις | sight / appearance | opsis | [toxicwind/opsis](https://github.com/toxicwind/opsis) | live | `pens/olympus/products/opsis` |
+| **didymos** | δίδυμος | twin | didymos | [toxicwind/didymos](https://github.com/toxicwind/didymos) | live | `pens/olympus/products/didymos` |
+| **chronos-forge** | χρόνος | time | chronos-forge | [toxicwind/chronos-forge](https://github.com/toxicwind/chronos-forge) | live | `pens/olympus/products/chronos-forge` |
 
-## Tooling
-
-- **bin surface**: entrypoints symlinked into `~/.local/bin`, pinned by the
--  estate-ops manifest and verified by `bin-verify.sh`. A broken link is
--  a FAIL, never a WARN.
--  **README**: generated from the pen's own product set by
--  `bin/readme-gen.ts`.
-
-## Conventions
-
-- Submoduleless: peer repos are shallow clones, never git submodules
-- Ports SSOT: `config/ports.env` is the single source of truth for :25xxx ports
-- Bun runtime: all TS/JS products run on Bun; Go and Rust are compiled binaries
-
-## License
-
-Estate internal — all rights reserved.
+> **Which is the "Greek pen"?** `pens/olympus/` is the Greek pen — it now HOLDS
+> the physical Greek-coded products under `olympus/products/` (tau, kappa, skopos,
+> kilo, muse, keryx, hodos, kairos, kryptos, agele, pinax, agon, antilogos,
+> pylae, propylon, opsis, didymos, chronos-forge). The pantheon above maps each
+> codename to its authoritative GitHub repo.
