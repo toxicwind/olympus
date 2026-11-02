@@ -24,7 +24,7 @@
     "model": "deepseek-v4-flash"
   },
   "loopTendency": {
-    "selfNgram": 0.813,
+    "selfNgram": 1,
     "semantic": null,
     "runs": 5
   },
@@ -163,7 +163,39 @@
       "selfNgram": 0.813,
       "narration": 0,
       "promises": 0
+    },
+    {
+      "path": "/models",
+      "status": 200,
+      "ctype": "application/json",
+      "bytes": 2150,
+      "verdict": "Buffered",
+      "note": "{\"object\":\"list\",\"data\":[{\"id\":\"glm-5.3-flash\",\"name\":\"GLM-5.3 Flash\",\"object\":\"model\",\"created\":1793147919,\"owned_by\":\""
+    },
+    {
+      "kind": "completions",
+      "model": "glm-5.3-flash",
+      "honored": true,
+      "selfNgram": 1,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "kind": "completions",
+      "model": "qwen3.6-35b",
+      "honored": false,
+      "selfNgram": 0.687,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "kind": "completions",
+      "model": "deepseek-v4-flash",
+      "honored": false,
+      "selfNgram": 1,
+      "narration": 0,
+      "promises": 0
     }
   ],
-  "probedAt": 1793418416804
+  "probedAt": 1793505027154
 }
