@@ -9,7 +9,7 @@
       "evidence": {
         "status": 200,
         "ctype": "application/json",
-        "bytes": 2150
+        "bytes": 2158
       }
     },
     "completions": {
@@ -195,7 +195,87 @@
       "selfNgram": 1,
       "narration": 0,
       "promises": 0
+    },
+    {
+      "path": "/models",
+      "status": 200,
+      "ctype": "application/json",
+      "bytes": 2158,
+      "verdict": "Buffered",
+      "note": "{\"object\":\"list\",\"data\":[{\"id\":\"glm-5.3-flash\",\"name\":\"GLM-5.3 Flash\",\"object\":\"model\",\"created\":1793147919,\"owned_by\":\""
+    },
+    {
+      "kind": "completions",
+      "model": "glm-5.3-flash",
+      "honored": true,
+      "selfNgram": 0.92,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "path": "/models",
+      "status": 200,
+      "ctype": "application/json",
+      "bytes": 2158,
+      "verdict": "Buffered",
+      "note": "{\"object\":\"list\",\"data\":[{\"id\":\"glm-5.3-flash\",\"name\":\"GLM-5.3 Flash\",\"object\":\"model\",\"created\":1793147919,\"owned_by\":\""
+    },
+    {
+      "kind": "completions",
+      "model": "glm-5.3-flash",
+      "honored": false,
+      "selfNgram": 0,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "kind": "completions",
+      "model": "qwen3.6-35b",
+      "honored": false,
+      "selfNgram": 0,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "kind": "completions",
+      "model": "deepseek-v4-flash",
+      "honored": false,
+      "selfNgram": 0,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "path": "/models",
+      "status": 200,
+      "ctype": "application/json",
+      "bytes": 2158,
+      "verdict": "Buffered",
+      "note": "{\"object\":\"list\",\"data\":[{\"id\":\"glm-5.3-flash\",\"name\":\"GLM-5.3 Flash\",\"object\":\"model\",\"created\":1793147919,\"owned_by\":\""
+    },
+    {
+      "kind": "completions",
+      "model": "glm-5.3-flash",
+      "honored": false,
+      "selfNgram": 0.657,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "kind": "completions",
+      "model": "qwen3.6-35b",
+      "honored": false,
+      "selfNgram": 0.908,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "kind": "completions",
+      "model": "deepseek-v4-flash",
+      "honored": false,
+      "selfNgram": 1,
+      "narration": 0,
+      "promises": 0
     }
   ],
-  "probedAt": 1793505027154
+  "probedAt": 1793745179454
 }

@@ -103,18 +103,24 @@ in the odyssey rig and must be present + functional. (Fixed a real regression wh
 the kairos shim hardcoded removed `estate/bin/` paths and silently `return 0`'d —
 the 2s guard was INERT for every agent command. TDD-fixed `toxicwind/kairos` `42b5e0e`.)
 
-- **`kairos` (καιρός)** — the 2-second-rule enforcer. Product:
+- **`kairos` (καιρός)** — the latency-first enforcer, **mostly invisible**. Product:
   `pens/olympus/products/kairos`; entry `~/.local/bin/kairos` (+ `run-fast`
-  alias). Every command an agent runs gets a 2.0s (4.0s shim-doctrine) hard
-  deadline; a breach races a faster alternative — never blocks.
+  alias). Slow routes auto-detach, banned tools rewrite invisibly, breaches
+  auto-race — **the agent's transcript stays clean**. All diagnostic banners
+  are gated behind `KAIROS_DEBUG=1`; default is silent pass-through.
   - Emits a **static bash shim** (`kairos init > shim.sh`) sourced via
     `BASH_ENV` (agent tool shells) + `~/.bashrc` (interactive). It wraps
-    `git/bun/npm/pip/uv/gh/go/cargo/...` so slow routes use `run-fast` and
-    banned patterns (`/dev/null`, `2>&1`, `| head`, bare `sleep`) are flagged.
+    `git/bun/npm/pip/uv/gh/go/cargo/...` so slow routes use `run-fast`.
+    Display truncation (`| head`/`| tail`/`| wc`) is a plain pipeline — never
+    scolded or cancelled. File truncation (`head file`) routes to `ffs read`.
   - The shim resolves `RF_BIN` (run-fast) and `DELEND_CODE_RACE` through
     **`$HOME/pens/barn/estate-ops/`** — NEVER `$HOME/estate/bin/` (removed in
     the reorg). A stale mirror path makes the hook inert; regenerate with
     `kairos init > shim.sh` after any product move.
+  - **Coverage gate**: `bun run test:coverage` enforces ≥90% line/function
+    coverage on kairos's own `src/` (Bun's `[coverage]` thresholds in
+    bunfig.toml are decorative — the real gate is `scripts/coverage-gate.ts`,
+    which parses lcov and fails below the target).
 - **`delend-code-race`** — the sub-4s-breach auto-racer
   (`@delendai/code-race` plugin; launcher `pens/barn/estate-ops/delend-code-race`).
   Usage: `delend-code-race "<slow cmd>" [--2s] [--per-source N]`. It re-runs the
