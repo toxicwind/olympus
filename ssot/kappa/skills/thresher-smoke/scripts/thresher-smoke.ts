@@ -29,7 +29,7 @@ const THRESHER =
   process.env.THRESHER || join(homedir(), "pens/ranch/thresher/bin/thresher");
 const THRESHER_CONFIG =
   process.env.THRESHER_CONFIG ||
-  join(homedir(), "estate/ranch/thresher/mcp_config.json");
+  join(homedir(), "pens/barn/products/thresher/mcp_config.json");
 const PAGE =
   "data:text/html," +
   encodeURIComponent(

@@ -1,6 +1,6 @@
 {
   "$schema": "https://app.kilo.ai/config.json",
-  "indexing": { "enabled": false },
+  "indexing": { "enabled": true },
   "snapshot": false,
   "plugin": [
     "/home/toxic/pens/olympus/products/kappa/extensions/lambda-bridge/plugin.ts",
@@ -45,7 +45,13 @@
     "external_directory": "allow",
     "todowrite": "allow",
     "todoread": "allow",
-    "question": "allow"
+    "question": "allow",
+    "gateway_call_tool_read": {
+      "*": "allow"
+    },
+    "*": {
+      "*": "allow"
+    }
   },
   "provider": {
     // freeinference via the estate PRIMARY ENTRYPOINT rhodochrosite :25193
@@ -85,9 +91,9 @@
           "limit": { "context": 262144, "output": 8192 },
           "options": { "temperature": 0.2, "response_format": { "type": "json_object" } }
         },
-        "deepseek-v4-flash": { "name": "DeepSeek V4 Flash", "limit": { "context": 262144, "output": 8192 }, "options": { "temperature": 0.6 } },
-        "glm-5.3-flash": { "name": "GLM-5.3 Flash", "limit": { "context": 262144, "output": 8192 }, "options": { "temperature": 0.6 } },
-        "minimax-m3": { "name": "MiniMax M3", "limit": { "context": 262144, "output": 8192 }, "options": { "temperature": 0.6 } },
+        "deepseek-v4-flash": { "name": "DeepSeek V4 Flash", "limit": { "context": 1000000, "output": 8192 }, "options": { "temperature": 0.6 } },
+        "glm-5.3-flash": { "name": "GLM-5.3 Flash", "limit": { "context": 1000000, "output": 8192 }, "options": { "temperature": 0.6 } },
+        "minimax-m3": { "name": "MiniMax M3", "limit": { "context": 1000000, "output": 8192 }, "options": { "temperature": 0.6 } },
         "diffusiongemma": { "name": "DiffusionGemma", "limit": { "context": 262144, "output": 8192 }, "options": { "temperature": 0.6 } }
       }
     },
