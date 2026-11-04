@@ -1,6 +1,1 @@
-[tools]
-bun = "latest"
-
-[tasks]
-run = "bin/run"
-check = "bin/check"
+# toolchain + run/check tasks inherited from pens-root mise.toml (2026-11-04)
