@@ -34,7 +34,6 @@ Do not hand-edit the Products table._
 | **opentui** | [toxicwind/opentui](https://github.com/toxicwind/opentui) | — | TypeScript | OpenTUI is a library to build terminal user interfaces. |
 | **opsis** | [toxicwind/opsis](https://github.com/toxicwind/opsis) | — | — | flowchart LR |
 | **pcap-capture** | [toxicwind/pcap-capture](https://github.com/toxicwind/pcap-capture) | — | TypeScript | Live network capture product for the geode inference plane. Captures PC + tailscale + kite traffic via tcpdump |
-| **pinax** | [toxicwind/pinax](https://github.com/toxicwind/pinax) | — | TypeScript | > *Every flock comes home to **pinax** — where the birds settle, perch, and |
 | **primitives** | [toxicwind/primitives](https://github.com/toxicwind/primitives) | — | TypeScript | — |
 | **propylon** | [toxicwind/propylon](https://github.com/toxicwind/propylon) | — | — | Hand-written glue between pitchfork and |
 | **pylae** | [toxicwind/pylae](https://github.com/toxicwind/pylae) | — | — | — |
