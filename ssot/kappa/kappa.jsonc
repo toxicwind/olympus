@@ -75,7 +75,10 @@
       "options": {
         "baseURL": "http://127.0.0.1:25193/v1",
         "apiKey": "{file:/home/toxic/.tau/router.key}",
-        "timeout": false
+        "timeout": false,
+        // 2026-11-10 doctrine: 429 (concurrency shed, 2-slot limit) is
+        // transient capacity — retry indefinitely, a slot eventually frees.
+        "unlimitedRetryOn429": true
       },
       "models": {
         "qwen3.6-35b": {
