@@ -1,6 +1,15 @@
 {
   "$schema": "https://app.kilo.ai/config.json",
-  "indexing": { "enabled": true },
+  "indexing": {
+    "enabled": true,
+    "provider": "openai-compatible",
+    "model": "bge-m3",
+    "dimension": 1024,
+    "openai-compatible": {
+      "baseUrl": "https://freeinference.org/v1",
+      "apiKey": "{file:/home/toxic/.tau/freeinference.key}"
+    }
+  },
   "snapshot": false,
   "plugin": [
     "/home/toxic/pens/olympus/products/kappa/extensions/lambda-bridge/plugin.ts",
@@ -62,7 +71,7 @@
     // scope, and the keyring file must never be committed).
     "freeinference": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "FreeInference (via rhodochrosite)",
+      "name": "FreeInference (via mimetite)",
       "options": {
         "baseURL": "http://127.0.0.1:25193/v1",
         "apiKey": "{file:/home/toxic/.tau/router.key}",
@@ -94,9 +103,9 @@
           "options": { "temperature": 0.2, "response_format": { "type": "json_object" } }
         },
         "deepseek-v4-flash": { "name": "DeepSeek V4 Flash", "limit": { "context": 1000000, "output": 8192 }, "options": { "temperature": 0.6 } },
-        "glm-5.3-flash": { "name": "GLM-5.3 Flash", "limit": { "context": 1000000, "output": 8192 }, "options": { "temperature": 0.6 } },
-        "minimax-m3": { "name": "MiniMax M3", "limit": { "context": 1000000, "output": 8192 }, "options": { "temperature": 0.6 } },
-        "diffusiongemma": { "name": "DiffusionGemma", "limit": { "context": 262144, "output": 8192 }, "options": { "temperature": 0.6 } }
+        "glm-5.3-flash": { "name": "GLM-5.3 Flash", "limit": { "context": 1000000, "output": 8192 }, "options": { "temperature": 0.6 } }
+        // minimax-m3 removed 2026-11-08: DEAD on freeinference (sticky rule; SSOT data.ts has no minimax)
+        // diffusiongemma removed 2026-11-08: dead id (data.ts: google/diffusiongemma-26b-a4b-it removed; SSOT has no diffusiongemma)
       }
     },
     // bge-m3 embeddings keep the DIRECT freeinference lane (AGENTS.md §5.1:
@@ -121,7 +130,7 @@
     // NVIDIA NIM — same 429-aware router entrypoint, nvidia-prefixed wire ids.
     "nvidia": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "NVIDIA NIM (via rhodochrosite)",
+      "name": "NVIDIA NIM (via mimetite)",
       "options": {
         "baseURL": "http://127.0.0.1:25193/v1",
         "apiKey": "{file:/home/toxic/.tau/router.key}",
