@@ -3,8 +3,10 @@
   "contract": "estate-mimetite/kappa-catalog/v1",
   "generator": "@toxicwind/mimetite codegen — kappa target (installed profile) — DO NOT EDIT BY HAND",
   "provenance": "@toxicwind/mimetite src/data.ts",
-  "generatedAt": "2026-11-10T08:38:01.000Z",
+  "generatedAt": "2026-11-12T09:45:53.000Z",
   "deadIds": [
+    "deepseek-ai/deepseek-v4-flash",
+    "deepseek-ai/deepseek-v4-pro",
     "llama-3.3-70b-versatile",
     "meta-llama/llama-3.1-8b-instruct",
     "meta-llama/llama-3.3-70b-instruct",
@@ -52,12 +54,12 @@
       "qwen/qwen3.5-122b-a10b"
     ],
     "nim-deepseek-v4-flash": [
-      "nvidia",
-      "deepseek-ai/deepseek-v4-flash"
+      "freeinference",
+      "deepseek-v4-flash"
     ],
     "nim-deepseek-v4-pro": [
-      "nvidia",
-      "deepseek-ai/deepseek-v4-pro"
+      "freeinference",
+      "deepseek-v4-flash"
     ],
     "nim-mistral-large-3": [
       "nvidia",
@@ -213,16 +215,22 @@
     ],
     "fi-free": [
       "freeinference",
-      "glm-5.3-flash"
+      "deepseek-v4-flash"
     ],
     "fi-coding": [
       "freeinference",
       "qwen3.6-35b"
+    ],
+    "fi-flash": [
+      "freeinference",
+      "deepseek-v4-flash"
     ]
   },
   "seeds": {
-    "bornite": [],
-    "rhodochrosite": [],
+    "bornite": [
+      "qwen2.5-3b"
+    ],
+    "mimetite": [],
     "vercel-gateway": [
       "nvidia/nemotron-3.5-lightning-free",
       "morph/morph-v3-fast",
@@ -232,7 +240,6 @@
       "openai/gpt-oss-120b"
     ],
     "freeinference": [
-      "glm-5.3-flash",
       "qwen3.6-35b",
       "deepseek-v4-flash"
     ],
@@ -240,18 +247,18 @@
     "google-antigravity": []
   },
   "provider": {
-    "rhodochrosite": {
+    "mimetite": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Rhodochrosite (estate multi-provider gateway)",
+      "name": "Mimetite (estate multi-provider gateway)",
       "options": {
         "baseURL": "http://127.0.0.1:25193/v1",
         "apiKey": "bornite-local"
       },
       "models": {}
     },
-    "rhodochrosite.chalcopyrite": {
+    "mimetite.chalcopyrite": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Rhodochrosite (estate multi-provider gateway) / Chalcopyrite :25200",
+      "name": "Mimetite (estate multi-provider gateway) / Chalcopyrite :25200",
       "options": {
         "baseURL": "http://127.0.0.1:25200/v1",
         "apiKey": "{env:CHALCOPYRITE_CLIENT_KEY}"
@@ -280,9 +287,9 @@
         }
       }
     },
-    "rhodochrosite.secure-nim": {
+    "mimetite.secure-nim": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Rhodochrosite (estate multi-provider gateway) / NVIDIA secure-NIM",
+      "name": "Mimetite (estate multi-provider gateway) / NVIDIA secure-NIM",
       "options": {
         "baseURL": "https://integrate.api.nvidia.com/v1",
         "apiKey": "{env:NVIDIA_API_KEY}"
@@ -304,9 +311,9 @@
         }
       }
     },
-    "rhodochrosite.azurite": {
+    "mimetite.azurite": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Rhodochrosite (estate multi-provider gateway) / Azurite (gemini-flash-tool-retrieval only)",
+      "name": "Mimetite (estate multi-provider gateway) / Azurite (gemini-flash-tool-retrieval only)",
       "options": {
         "baseURL": "http://127.0.0.1:25109/gemini-eap-interactions",
         "apiKey": "none"
@@ -381,13 +388,6 @@
         "apiKey": "{env:FREEINFERENCE_API_KEY}"
       },
       "models": {
-        "glm-5.3-flash": {
-          "name": "glm-5.3-flash",
-          "limit": {
-            "context": 1000000,
-            "output": 8192
-          }
-        },
         "qwen3.6-35b": {
           "name": "qwen3.6-35b",
           "limit": {
@@ -576,15 +576,15 @@
     {
       "name": "bornite",
       "displayName": "Bornite (local VRAM engine)",
-      "baseUrl": "http://127.0.0.1:25100/v1",
+      "baseUrl": "http://127.0.0.1:25196/v1",
       "keyEnv": "",
       "keyEnvs": [],
       "adapter": "openai",
       "auth": "none"
     },
     {
-      "name": "rhodochrosite",
-      "displayName": "Rhodochrosite (estate multi-provider gateway)",
+      "name": "mimetite",
+      "displayName": "Mimetite (estate multi-provider gateway)",
       "baseUrl": "http://127.0.0.1:25193/v1",
       "keyEnv": "FLOCK_API_KEY",
       "keyEnvs": [
@@ -664,7 +664,6 @@
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
       },
       "staticModels": [
-        "glm-5.3-flash",
         "qwen3.6-35b",
         "deepseek-v4-flash"
       ]

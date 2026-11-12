@@ -188,6 +188,29 @@
           "options": { "temperature": 0.6 }
         }
       }
+    },
+    // bornite-local: the WORKING local silicon lane (:25196, RTX 3090,
+    // beellama.cpp llama-server, qwen2.5-3b-instruct-q4_k_m). Degen doctrine:
+    // local is the default; cloud is the exception. Tool-call verified. The
+    // catalog's older "bornite" entry pointed at :25100 (dead Go plane) with
+    // an empty model list — this is the real, reachable local lane.
+    "bornite-local": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Bornite Local (RTX 3090 silicon)",
+      "options": {
+        "baseURL": "http://127.0.0.1:25196/v1",
+        "apiKey": "none",
+        "timeout": false
+      },
+      "models": {
+        "qwen2.5-3b": {
+          "name": "Qwen2.5 3B (local, tool-call)",
+          "id": "qwen2.5-3b",
+          "tool_call": true,
+          "limit": { "context": 16384, "output": 4096 },
+          "options": { "temperature": 0.6 }
+        }
+      }
     }
   }
 }
