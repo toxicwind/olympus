@@ -1,0 +1,246 @@
+shellPath: /bin/bash
+modelRoles:
+  smol: freeinference/qwen3.6-35b
+  slow: freeinference/deepseek-v4-flash
+  plan: freeinference/deepseek-v4-flash
+  advisor: freeinference/deepseek-v4-flash
+  fast: freeinference/qwen3.6-35b
+  mu: freeinference/qwen3.6-35b
+  vision: freeinference/qwen3.6-35b
+  default: freeinference-router/deepseek-v4-flash:low
+  judge: freeinference/deepseek-v4-flash
+models:
+  providers:
+    nim:
+      baseUrl: http://127.0.0.1:8000
+      api: openai-completions
+      auth: none
+      discovery: openai-models-list
+      disableStrictTools: false
+      modelOverrides:
+        deepseek-ai/deepseek-v4-flash-0731:
+          contextWindow: 1048576
+          maxTokens: 393216
+symbolPreset: nerd
+composer:
+  shape: box
+  tokenRate: true
+theme:
+  dark: anthracite
+setupVersion: 3
+tools:
+  approvalMode: yolo
+  approval:
+    find: allow
+    grep: allow
+  artifactSpillThreshold: 100
+  artifactTailBytes: 100
+  artifactHeadBytes: 100
+  outputMaxColumns: 1024
+  artifactTailLines: 2000
+  artifactMaxBytes: 64
+  abortOnFabricatedResult: true
+  speculativeExecution:
+    enabled: true
+  xdevDocs: inline
+find:
+  enabled: auto
+bash:
+  allowCompoundCommands: false
+  gitGuard: false
+  stripTrailingHeadTail: true
+  enabled: true
+  autoBackground:
+    enabled: true
+    thresholdMs: 3000
+  direnv: "off"
+lsp:
+  diagnosticsOnEdit: true
+github:
+  enabled: true
+python:
+  interpreter: /usr/bin/python3
+  kernelMode: session
+proseOnlyThinking: false
+temperature: -1
+presencePenalty: -1
+personality: pragmatic
+advisor:
+  enabled: false
+  syncBacklog: "1"
+  continueSeverity: nit
+  reviewMode: turn
+steeringMode: all
+followUpMode: all
+interruptMode: wait
+contextPromotion:
+  enabled: true
+extendedContext: true
+branchSummary:
+  enabled: true
+compaction:
+  experimentalContextManagement: true
+snapcompact:
+  systemPrompt: agents-md
+  toolResults: true
+memory:
+  backend: mnemopi
+edit:
+  fuzzyThreshold: 0.85
+  blackbox:
+    enabled: true
+  autoRepair:
+    enabled: true
+readLineNumbers: true
+read:
+  imageModel: vision   # 2026-11-13: route images to qwen3.6-35b, do not attach to text-only deepseek (silent-drop anomaly #10)
+  defaultLimit: 5000
+  renderMarkdown: true
+  toolResultPreview: true
+bashInterceptor:
+  enabled: true
+  patterns:
+    - pattern: ^\s*sleep\s+
+      suggestedTool: none
+    - pattern: ^\s*(cat|head|tail|less|more|grep|rg|ripgrep|find|fd)\s+
+      suggestedTool: read
+    - pattern: "\\|\\s*(cat|head|tail|grep|rg|find|fd)(\\s+-[^|]*)?$"
+      suggestedTool: read
+    - pattern: \s(grep|rg|ripgrep|find|fd|head|tail|cat)\s
+      suggestedTool: read
+    - pattern: (\\n|<<(EOF|CASE|BANK|CALLOUT)|<<-)
+      suggestedTool: bash
+    - pattern: "--multiline|\\\\n.*\\\\n"
+      suggestedTool: read
+shellMinimizer:
+  sourceOutlineLevel: aggressive
+  enabled: true
+eval:
+  timeout: 0
+  autoBackground:
+    enabled: true
+    thresholdMs: 3000
+  workpool:
+    freshAgents: true
+  py: false
+astGrep:
+  enabled: true
+computer:
+  enabled: true
+  backgroundFallback: takeover
+  display: all
+ratchet:
+  enabled: true
+checkpoint:
+  enabled: true
+defaultThinkingLevel: auto
+update:
+  auto: true
+providers:
+  maxInFlightRequests:
+    freeinference: 2
+    freeinference-an: 2
+  openrouterVariant: default
+autolearn:
+  enabled: true
+  autoContinue: true
+task:
+  eager: preferred
+  file: true
+  structured: true
+  enableEffort: true
+  perCallModel: "on"
+  maxConcurrency: 12
+  workerThreads: 8
+  enableLsp: true
+  maxEffort: high
+  isolation:
+    enabled: false
+  showResolvedModelBadge: true
+worktree:
+  onStart: "off"
+commands:
+  enableClaudeUser: true
+  enableOpencodeUser: true
+todo:
+  eager: default
+  reminders: false
+  enabled: true
+grep:
+  contextBefore: 5
+  contextAfter: 10
+browser:
+  headless: false
+  relay: true
+async:
+  printWake: true
+mcp:
+  notifications: true
+extensionRenderers:
+  assistantText: true
+  transcriptPresenters: true
+spotlight:
+  experiment:
+    enabled: true
+ttsr:
+  contextMode: discard
+  judge: "on"
+  interruptMode: always
+  repeatMode: after-gap
+  enabled: false
+features:
+  unexpectedStopDetection: smart
+topP: -1
+topK: -1
+minP: -1
+textVerbosity: medium
+images:
+  describeForTextModels: true
+statusLine:
+  preset: compact
+  separator: powerline
+  contextLine: embedded
+  sessionAccent: true
+  transparent: true
+  compactThinkingLevel: false
+  showHookStatus: true
+tui:
+  hyperlinks: always
+  tight: true
+  motion: full
+display:
+  shimmer: kitt
+  pinnedAgents: collapsed
+  subagentLivePreview: true
+  smoothStreaming: true
+  showTokenUsage: true
+  showTurnTime: false
+  collapseCompacted: false
+repetitionPenalty: -1
+provider:
+  appendOnlyContext: "on"
+tier:
+  subagent: freeinference/deepseek-v4-flash
+retry:
+  rateLimitWalksChain: true
+  fallbackOn: any
+  fallbackChains:
+    freeinference/deepseek-v4-flash:
+      - freeinference-router/deepseek-v4-flash
+      - freeinference/qwen3.6-35b
+    freeinference/qwen3.6-35b:
+      - freeinference-router/qwen3.6-35b
+      - freeinference/deepseek-v4-flash
+    freeinference/*:
+      - freeinference-router/deepseek-v4-flash
+      - freeinference-router/qwen3.6-35b
+      - freeinference/qwen3.6-35b
+hideThinkingBlock: false
+generate_image:
+  enabled: true
+ida:
+  enabled: true
+  python: C:\Python315\python.exe
+  installDir: C:\Program Files\IDA Professional 9.3
+  maxOpen: 16
+  idleCloseSec: 0
