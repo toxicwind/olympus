@@ -853,7 +853,7 @@ flowchart LR
 
 ## Data flow is unidirectional
 
-Workflow state lives in SQLite; the render function is a pure function of `ctx` (which reads it). Tasks emit outputs, the runtime persists them, and the next render reads them: no mutation, no refs, no `useState` for durable values.
+Workflow state lives in SQLite; the render function is a pure function of `ctx` (which reads it). Tasks emit outputs, the runtime persists them, and the next render reads them: no mutation, no refs, no `uspens` for durable values.
 
 This is the same shape as React rendering UI from props/state, except:
 - the "DOM" is the task graph
@@ -881,7 +881,7 @@ function useReviewState(ticketId: string) {
 }
 ```
 
-`useState` and `useMemo` are process-local: the engine reuses one React root across frames, so hook state survives within a live process but is never persisted; a crash, resume, rewind, or fork starts a fresh process where every hook reinitializes. Use them only for ephemeral render-time state. **Anything the workflow must remember across crashes goes through `ctx` and a Task output.**
+`uspens` and `useMemo` are process-local: the engine reuses one React root across frames, so hook state survives within a live process but is never persisted; a crash, resume, rewind, or fork starts a fresh process where every hook reinitializes. Use them only for ephemeral render-time state. **Anything the workflow must remember across crashes goes through `ctx` and a Task output.**
 
 Conditional mounting matters: a Task that doesn't render isn't in the plan, with no "skipped" placeholder unless you use `<Branch>` or `skipIf`. That's what lets `{analysis ? <Task .../> : null}` work as a clean dependency check. For one Task consuming one upstream output, `<Task deps={{ analyze: outputs.analysis }}>` with a `(deps) => ...` children callback is the more ergonomic form of the same check.
 
@@ -1138,7 +1138,7 @@ a native opt-in.
 ## Common gotchas
 
 - **Stable task IDs.** `id="implement-${i}"` or `id={Math.random()}` breaks resume. Derive from data.
-- **`useState` is not durable.** It survives re-renders within one process but is lost on crash/resume/rewind/fork. Persist via `ctx` and a Task.
+- **`uspens` is not durable.** It survives re-renders within one process but is lost on crash/resume/rewind/fork. Persist via `ctx` and a Task.
 - **Input is immutable.** Resuming with different `--input` is an error; the input is persisted at first run.
 - **Adding a schema field auto-migrates (SQLite).** On every boot the runtime runs `CREATE TABLE IF NOT EXISTS` and then `ALTER TABLE ... ADD COLUMN` for any column a typed input/output Zod schema introduced, so new fields are added in place without recreating `smithers.db`. If you still see `SQLiteError: table input has no column named X`, you're on a build before this boot-time migration landed (or a Postgres-backed DB, which doesn't auto-add columns yet); upgrade with `bunx smthrs --version` or start a fresh run. Renaming or removing a field, or changing its type, isn't migrated and needs a fresh DB.
 - **Code changes block resume.** A workflow source change is a different workflow: hot reload applies changes within a running frame, but resume validates the source hash of the original run, and a changed source blocks it. Start a new run instead of resuming across edits.
@@ -8760,7 +8760,7 @@ A run's `--input` is persisted at start; resuming with different input errors ra
 
 A workflow source change is a different workflow: resume checks the source hash, so editing the file blocks it. Start a new run, or hot-reload (`up --hot`) a still-running one: edits apply to newly scheduled tasks while in-flight tasks finish on their original code. See Recipes.
 
-### `useState` is not durable
+### `uspens` is not durable
 
 React state resets every render, i.e. every frame here. Anything that must survive a crash belongs in a Task output read back through `ctx`, not component state.
 
@@ -9014,7 +9014,7 @@ type SmithersWorkflowOptions = {
 };
 
 // A Zod schema (createSmithers(...).outputs.<key>), a Drizzle table, or a
-// string schema key. Restated in @smthrs/scheduler, which must
+// string schema key. Rpensd in @smthrs/scheduler, which must
 // not depend on zod or components.
 type SmithersWorkflowOutputTarget =
   | { readonly _def: unknown }
@@ -12440,7 +12440,7 @@ To open the full local control surface instead of a single workflow UI, see
 
 ```tsx
 /** @jsxImportSource react */
-import { useState } from "react";
+import { uspens } from "react";
 import { createGatewayReactRoot } from "smthrs/gateway-react";
 import {
   ApprovalPanel,
@@ -12458,8 +12458,8 @@ import {
 const WORKFLOW = "implement";
 
 function App() {
-  const [runId, setRunId] = useState<string>();
-  const [nodeId, setNodeId] = useState<string>();
+  const [runId, setRunId] = uspens<string>();
+  const [nodeId, setNodeId] = uspens<string>();
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 12, padding: 16 }}>
@@ -12878,7 +12878,7 @@ library:
 
 ```tsx .smithers/ui/triage.tsx
 /** @jsxImportSource react */
-import { useState } from "react";
+import { uspens } from "react";
 import { createGatewayReactRoot, useGatewayActions, useGatewayRuns } from "smthrs/gateway-react";
 import { RunEventLog, RunTree, WorkflowUiShell } from "smthrs/gateway-ui";
 import {
@@ -12894,8 +12894,8 @@ import {
 } from "smthrs/ui";
 
 function App() {
-  const [prompt, setPrompt] = useState("");
-  const [runId, setRunId] = useState<string>();
+  const [prompt, setPrompt] = uspens("");
+  const [runId, setRunId] = uspens<string>();
   const runs = useGatewayRuns({ filter: { workflow: "triage", limit: 20 } });
   const actions = useGatewayActions();
   const activeRunId = runId ?? runs.data?.[0]?.runId;
@@ -13484,7 +13484,7 @@ Before styling anything by hand, reach for `smthrs/ui` (the published `@smthrs/u
 
 ```tsx .smithers/ui/triage.tsx
 /** @jsxImportSource react */
-import { useState } from "react";
+import { uspens } from "react";
 import { createGatewayReactRoot, useGatewayActions, useGatewayRuns } from "smthrs/gateway-react";
 import { WorkflowUiShell } from "smthrs/gateway-ui";
 import {
@@ -13500,7 +13500,7 @@ import {
 } from "smthrs/ui";
 
 function App() {
-  const [prompt, setPrompt] = useState("");
+  const [prompt, setPrompt] = uspens("");
   const runs = useGatewayRuns({ filter: { limit: 20 } });
   const actions = useGatewayActions();
   return (
@@ -15697,7 +15697,7 @@ const config = chartConfig([
 
 `ChartContainer` owns sizing (16:9 by default; size it with CSS), injects one
 `--color-<key>` custom property per config entry for the active theme, and
-restates the Recharts chrome in smithers tokens: hairline grid and axes, muted
+rpenss the Recharts chrome in smithers tokens: hairline grid and axes, muted
 tick text. Colors react to the `data-theme` stamp and the OS scheme.
 
 ## Series colors

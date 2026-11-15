@@ -18,7 +18,7 @@
  *
  * Usage:  bun smoke/thresher-smoke.ts
  * Env:    THRESHER=/path/to/thresher (default pens/ranch/thresher/bin/thresher)
- *         THRESHER_CONFIG=/path/to/mcp_config.json (default estate/ranch/thresher)
+ *         THRESHER_CONFIG=/path/to/mcp_config.json (default pens/ranch/thresher)
  * Exit:   0 = all steps pass, 1 = first failure (with the tool output shown).
  */
 import { spawnSync } from "node:child_process";

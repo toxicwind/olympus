@@ -65,7 +65,7 @@
     }
   },
   "provider": {
-    // freeinference via the estate PRIMARY ENTRYPOINT rhodochrosite :25193
+    // freeinference via the pens PRIMARY ENTRYPOINT rhodochrosite :25193
     // (keyed lanes, 429 rotation, per-model strikes). Key via {file:} — the
     // only token-legal form in config ({env:} is rejected outside trusted
     // scope, and the keyring file must never be committed).

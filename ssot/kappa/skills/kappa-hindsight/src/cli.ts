@@ -2,7 +2,7 @@
 /**
  * kappahindsight — Kappa hindsight feature.
  *
- * Kappa-native recall / retrospective across past estate + Kappa work, modeled
+ * Kappa-native recall / retrospective across past pens + Kappa work, modeled
  * on the kilo hindsight-plugin (mirrors the tau/kilo hindsight pattern). Durable
  * beyond a single session: this is a first-class Kappa command.
  *
@@ -24,13 +24,13 @@ import { join } from "node:path";
 const HOME = homedir();
 const STORE = join(HOME, ".local/share/kappa/kappa-main.db");
 const ORACLE_LEDGER =
-  "/home/toxic/pens/estate/ranch/squawk/oracle/ledger/ledger.jsonl";
+  "/home/toxic/pens/pens/ranch/squawk/oracle/ledger/ledger.jsonl";
 const DIRECTIVES =
-  "/home/toxic/pens/estate/ranch/hatch/kite/agents/ember/directives.md";
+  "/home/toxic/pens/pens/ranch/hatch/kite/agents/ember/directives.md";
 const SQUAWK_URL = process.env.SQUAWK_URL || "http://127.0.0.1:25120";
 const SQUAWK_TOKEN = (() => {
   try {
-    return readFileSync(join(HOME, ".config/estate-chat-token"), "utf8").trim();
+    return readFileSync(join(HOME, ".config/pens-chat-token"), "utf8").trim();
   } catch {
     return "";
   }
@@ -184,7 +184,7 @@ async function main() {
   const args = process.argv.slice(2);
   if (args.includes("-h") || args.includes("--help")) {
     log(
-      `kappahindsight — Kappa estate recall feature (modeled on kilo hindsight)
+      `kappahindsight — Kappa pens recall feature (modeled on kilo hindsight)
 Usage: kappa-hindsight [goals|changed|blockers|all]
 
   goals    recent session goals (default)

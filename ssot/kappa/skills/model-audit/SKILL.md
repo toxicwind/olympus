@@ -1,6 +1,6 @@
 ---
 name: model-audit
-description: Probe-driven audit of the estate's model lanes and tau session telemetry — live-probe every provider surface (names drift, resolve via the estate ports SSOT), race models for real latency/quality, and dataframe-audit tau's agent.db. Use when picking models, diagnosing 429/401 storms, or auditing what models actually honor (reasoning_effort, max_reasoning, thinking).
+description: Probe-driven audit of the pens's model lanes and tau session telemetry — live-probe every provider surface (names drift, resolve via the pens ports SSOT), race models for real latency/quality, and dataframe-audit tau's agent.db. Use when picking models, diagnosing 429/401 storms, or auditing what models actually honor (reasoning_effort, max_reasoning, thinking).
 ---
 
 # model-audit — probe-driven model/lane audit
@@ -18,7 +18,7 @@ Scripts (bun):
 
 ## Probed truths (2026-10-26)
 
-- **secretsmith env emits `KEY='value'` shell exports** — any consumer that
+- **kryptos env emits `KEY='value'` shell exports** — any consumer that
   doesn't strip the matching quote pair sends `Bearer sk-...'` → 401 "Missing
   Authentication header" (keypool mass-down, fixed via parseEnvLine).
 - **openrouter `/api/v1/key` is a probe trap** (401 on ANY Bearer key); the

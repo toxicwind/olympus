@@ -1,14 +1,14 @@
 shellPath: /bin/bash
 modelRoles:
-  smol: freeinference/qwen3.6-35b
-  slow: freeinference/deepseek-v4-flash
-  plan: freeinference/deepseek-v4-flash
-  advisor: freeinference/deepseek-v4-flash
-  fast: freeinference/qwen3.6-35b
-  mu: freeinference/qwen3.6-35b
-  vision: freeinference/qwen3.6-35b
-  default: freeinference-router/deepseek-v4-flash:low
-  judge: freeinference/deepseek-v4-flash
+  smol: mimetite/freeinference/qwen3.6-35b
+  slow: mimetite/freeinference/deepseek-v4-flash
+  plan: mimetite/freeinference/deepseek-v4-flash
+  advisor: mimetite/freeinference/deepseek-v4-flash
+  fast: mimetite/freeinference/qwen3.6-35b
+  mu: mimetite/freeinference/qwen3.6-35b
+  vision: mimetite/freeinference/qwen3.6-35b
+  default: mimetite/freeinference/deepseek-v4-flash
+  judge: mimetite/freeinference/deepseek-v4-flash
 models:
   providers:
     nim:
@@ -93,7 +93,7 @@ edit:
     enabled: true
 readLineNumbers: true
 read:
-  imageModel: vision   # 2026-11-13: route images to qwen3.6-35b, do not attach to text-only deepseek (silent-drop anomaly #10)
+  imageModel: vision
   defaultLimit: 5000
   renderMarkdown: true
   toolResultPreview: true
@@ -138,8 +138,8 @@ update:
   auto: true
 providers:
   maxInFlightRequests:
-    freeinference: 2
-    freeinference-an: 2
+    freeinference: 99
+    freeinference-an: 99
   openrouterVariant: default
 autolearn:
   enabled: true
@@ -183,11 +183,12 @@ spotlight:
   experiment:
     enabled: true
 ttsr:
-  contextMode: discard
-  judge: "on"
-  interruptMode: always
-  repeatMode: after-gap
+  contextMode: keep
+  judge: "off"
+  interruptMode: never
+  repeatMode: once
   enabled: false
+  builtinRules: false
 features:
   unexpectedStopDetection: smart
 topP: -1
@@ -220,20 +221,19 @@ repetitionPenalty: -1
 provider:
   appendOnlyContext: "on"
 tier:
-  subagent: freeinference/deepseek-v4-flash
+  subagent: mimetite/freeinference/deepseek-v4-flash
 retry:
   rateLimitWalksChain: true
   fallbackOn: any
   fallbackChains:
-    freeinference/deepseek-v4-flash:
-      - freeinference-router/deepseek-v4-flash
-      - freeinference/qwen3.6-35b
-    freeinference/qwen3.6-35b:
-      - freeinference-router/qwen3.6-35b
+    mimetite/freeinference/deepseek-v4-flash:
       - freeinference/deepseek-v4-flash
-    freeinference/*:
-      - freeinference-router/deepseek-v4-flash
-      - freeinference-router/qwen3.6-35b
+      - freeinference/qwen3.6-35b
+    mimetite/freeinference/qwen3.6-35b:
+      - freeinference/qwen3.6-35b
+      - freeinference/deepseek-v4-flash
+    mimetite/*:
+      - freeinference/deepseek-v4-flash
       - freeinference/qwen3.6-35b
 hideThinkingBlock: false
 generate_image:

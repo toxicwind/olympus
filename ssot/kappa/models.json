@@ -1,6 +1,6 @@
 {
   "$schema": "https://app.kappa.ai/config.json",
-  "contract": "estate-mimetite/kappa-catalog/v1",
+  "contract": "pens-mimetite/kappa-catalog/v1",
   "generator": "@toxicwind/mimetite codegen — kappa target (full profile) — DO NOT EDIT BY HAND",
   "provenance": "@toxicwind/mimetite src/data/providers.ts",
   "generatedAt": "2026-11-05T19:59:17.000Z",
@@ -127,23 +127,23 @@
       "freeinference",
       "qwen3.6-35bcode"
     ],
-    "estate/auto": [
+    "pens/auto": [
       "freeinference",
       "qwen3.6-35bauto"
     ],
-    "estate/fast": [
+    "pens/fast": [
       "freeinference",
       "qwen3.6-35bfast"
     ],
-    "estate/free": [
+    "pens/free": [
       "freeinference",
       "qwen3.6-35bfree"
     ],
-    "estate/code": [
+    "pens/code": [
       "freeinference",
       "qwen3.6-35bcode"
     ],
-    "estate/reasoning": [
+    "pens/reasoning": [
       "freeinference",
       "qwen3.6-35breasoning"
     ]

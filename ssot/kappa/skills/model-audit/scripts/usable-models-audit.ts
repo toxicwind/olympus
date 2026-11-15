@@ -4,7 +4,7 @@
  *
  * Names drift (bornite=ex-herd, rhodochrosite=ex-NIM, chalcopyrite=ex-atlas,
  * thresher=ex-mcpproxy), so NOTHING is hardcoded: ports resolve from the
- * estate SSOT (estate/config/ports.env), provider surfaces are probed live
+ * pens SSOT (pens/config/ports.env), provider surfaces are probed live
  * (DECLARED ≠ OBSERVED), and the diff vs tau's bundled models.json becomes a
  * KDL `exclude-models` block — models-only, never provider disablement.
  *
@@ -18,14 +18,14 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 
-const ESTATE = join(homedir(), "estate");
+const pens = join(homedir(), "pens");
 
 // ---- name-agnostic SSOT resolution ----
 function portEnv(): Map<string, string> {
   const m = new Map<string, string>();
   try {
     for (const line of readFileSync(
-      join(ESTATE, "config/ports.env"),
+      join(pens, "config/ports.env"),
       "utf8",
     ).split("\n")) {
       const t = line.trim();
@@ -57,7 +57,7 @@ function pickPort(...keys: string[]): string | undefined {
 type Surface = { name: string; base: string; key?: string };
 function surfaces(): Surface[] {
   const out: Surface[] = [];
-  // rhodochrosite is AUTHORITATIVE: the estate router every lane fronts
+  // rhodochrosite is AUTHORITATIVE: the pens router every lane fronts
   // (tau's openai-compatible lane points here with the corral JWT). Its
   // roster IS the usable model coordinate space.
   const rhodo = pickPort("RHODOCHROSITE_PORT", "NIM_PROXY_PORT", "ROUTER_PORT");

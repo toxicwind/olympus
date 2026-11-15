@@ -4,9 +4,13 @@
   "framing": {
     "probed": false,
     "models": {
-      "verdict": "Absent",
-      "path": null,
-      "evidence": null
+      "verdict": "Buffered",
+      "path": "/models",
+      "evidence": {
+        "status": 200,
+        "ctype": "application/json",
+        "bytes": 1558
+      }
     },
     "completions": {
       "verdict": "unprobed",
@@ -17,7 +21,7 @@
   "reasoningPassthrough": {
     "honored": false,
     "field": null,
-    "model": "deepseek-v4-flash"
+    "model": "bge-m3"
   },
   "loopTendency": {
     "selfNgram": 0,
@@ -391,7 +395,71 @@
       "bytes": 6425,
       "verdict": "Error",
       "note": "<!DOCTYPE html> <!--[if lt IE 7]> <html class=\"no-js ie6 oldie\" lang=\"en-US\"> <![endif]--> <!--[if IE 7]> <html class"
+    },
+    {
+      "path": "/models",
+      "status": 200,
+      "ctype": "application/json",
+      "bytes": 2150,
+      "verdict": "Buffered",
+      "note": "{\"object\":\"list\",\"data\":[{\"id\":\"glm-5.3-flash\",\"name\":\"GLM-5.3 Flash\",\"object\":\"model\",\"created\":1794287117,\"owned_by\":\""
+    },
+    {
+      "kind": "completions",
+      "model": "glm-5.3-flash",
+      "honored": false,
+      "selfNgram": 0,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "kind": "completions",
+      "model": "qwen3.6-35b",
+      "honored": false,
+      "selfNgram": 0,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "kind": "completions",
+      "model": "deepseek-v4-flash",
+      "honored": false,
+      "selfNgram": 0,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "path": "/models",
+      "status": 200,
+      "ctype": "application/json",
+      "bytes": 1558,
+      "verdict": "Buffered",
+      "note": "{\"object\":\"list\",\"data\":[{\"id\":\"qwen3.6-35b\",\"name\":\"Qwen3.6 35B (high speed)\",\"object\":\"model\",\"created\":1794287117,\"ow"
+    },
+    {
+      "kind": "completions",
+      "model": "qwen3.6-35b",
+      "honored": false,
+      "selfNgram": 0.385,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "kind": "completions",
+      "model": "deepseek-v4-flash",
+      "honored": false,
+      "selfNgram": 0.867,
+      "narration": 0,
+      "promises": 0
+    },
+    {
+      "kind": "completions",
+      "model": "bge-m3",
+      "honored": false,
+      "selfNgram": 0,
+      "narration": 0,
+      "promises": 0
     }
   ],
-  "probedAt": 1794266871089
+  "probedAt": 1794451781702
 }

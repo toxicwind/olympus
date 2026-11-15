@@ -1,7 +1,7 @@
 # hindsight
 
 Kappa-side hindsight command. First-class Kappa recall / retrospective over past
-estate + Kappa work — modeled on the kilo hindsight-plugin (same estate sources),
+pens + Kappa work — modeled on the kilo hindsight-plugin (same pens sources),
 made Kappa-native and durable beyond a single session.
 
 Bin: `~/.local/bin/kappa-hindsight` → `~/.config/kappa/skills/kappa-hindsight/bin/kappa-hindsight`
@@ -21,7 +21,7 @@ Bin: `~/.local/bin/kappa-hindsight` → `~/.config/kappa/skills/kappa-hindsight/
 | Source               | Path                                             | Gives                                   |
 | -------------------- | ------------------------------------------------ | --------------------------------------- |
 | Kappa session store  | `~/.local/share/kappa/kappa-main.db`             | recent goals, todos (open/blocked work) |
-| Squawk oracle ledger | `estate/ranch/squawk/oracle/ledger/ledger.jsonl` | settled/slashed, activity tally         |
+| Squawk oracle ledger | `pens/ranch/squawk/oracle/ledger/ledger.jsonl` | settled/slashed, activity tally         |
 | Fleet directives     | `ranch/hatch/kite/agents/ember/directives.md`    | standing directives / INBOX             |
 
 ## Notes
