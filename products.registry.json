@@ -1,0 +1,140 @@
+{
+  "products": {
+    "tau": {
+      "enabled": true,
+      "aliases": []
+    },
+    "kappa": {
+      "enabled": true,
+      "aliases": []
+    },
+    "keryx": {
+      "enabled": true,
+      "aliases": []
+    },
+    "kryptos": {
+      "enabled": true,
+      "aliases": []
+    },
+    "skopos": {
+      "enabled": true,
+      "aliases": []
+    },
+    "kilo": {
+      "enabled": true,
+      "aliases": []
+    },
+    "muse": {
+      "enabled": true,
+      "aliases": []
+    },
+    "agon": {
+      "enabled": true,
+      "aliases": []
+    },
+    "antilogos": {
+      "enabled": true,
+      "aliases": []
+    },
+    "chronos-forge": {
+      "enabled": true,
+      "aliases": []
+    },
+    "didymos": {
+      "enabled": true,
+      "aliases": []
+    },
+    "opsis": {
+      "enabled": true,
+      "aliases": []
+    },
+    "propylon": {
+      "enabled": true,
+      "aliases": []
+    },
+    "pylae": {
+      "enabled": true,
+      "aliases": []
+    },
+    "kleio": {
+      "enabled": true,
+      "aliases": []
+    },
+    "forge": {
+      "enabled": true,
+      "aliases": []
+    },
+    "sigma": {
+      "enabled": true,
+      "aliases": []
+    },
+    "ergane": {
+      "enabled": true,
+      "aliases": []
+    },
+    "hestia": {
+      "enabled": true,
+      "aliases": []
+    },
+    "haos": {
+      "enabled": true,
+      "aliases": []
+    },
+    "tarachos": {
+      "enabled": true,
+      "aliases": []
+    },
+    "morphe": {
+      "enabled": true,
+      "aliases": []
+    },
+    "lambda": {
+      "enabled": true,
+      "aliases": []
+    },
+    "rig-citizen": {
+      "enabled": true,
+      "aliases": []
+    },
+    "opentui": {
+      "enabled": true,
+      "aliases": []
+    },
+    "typescript-go": {
+      "enabled": true,
+      "aliases": []
+    },
+    "ts-blank-space": {
+      "enabled": true,
+      "aliases": []
+    },
+    "hodos": {
+      "enabled": true,
+      "aliases": []
+    },
+    "pinax": {
+      "enabled": true,
+      "aliases": []
+    },
+    "primitives": {
+      "enabled": true,
+      "aliases": []
+    },
+    "mneme": {
+      "enabled": true,
+      "aliases": []
+    },
+    "rig": {
+      "enabled": false,
+      "aliases": [
+        "hephaistos",
+        "hepistos",
+        "openfang"
+      ]
+    },
+    "pens-age": {
+      "enabled": true,
+      "aliases": []
+    }
+  }
+}

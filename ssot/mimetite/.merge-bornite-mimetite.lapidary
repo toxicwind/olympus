@@ -1,0 +1,7 @@
+# bornite → mimetite product merge (2026-11-12): mimetite absorbs bornite.
+# Only the PRODUCT PATH changes; the `bornite` provider id (catalog data.ts)
+# and the `bornite-local-lane` daemon name are RUNTIME names, left intact.
+substr: products/bornite/ => products/mimetite/
+substr: products/bornite => products/mimetite
+substr: /pens/geode/products/bornite/ => /pens/geode/products/mimetite/
+substr: /pens/geode/products/bornite => /pens/geode/products/mimetite

@@ -1,0 +1,63 @@
+# Per-pen pitchfork config — olympus pen (v2, geode pattern)
+# Olympus = the forge family: kimi-code (lambda) + sigma MCP proxy.
+# Recreated 2026-11-16 from the pre-reorg snapshot; claim-port path fixed
+# (estate/products/estate-ops -> ranch/products/ops).
+
+# ============================================================================
+# WEB — kimi-code (lambda)
+# ============================================================================
+
+[daemons.lambda]
+run = "exec /home/toxic/pens/ranch/products/ops/claim-port 25126 /home/toxic/pens/olympus/products/lambda/apps/kimi-code/dist/main.mjs web --no-open --port 25126"
+auto = ["start"]
+retry = true
+ready_http = "http://127.0.0.1:25126/health"
+port = 25126
+expected_port = [25126]
+depends = ["barn/thresher"]
+dir = "/home/toxic/pens/olympus/products/lambda"
+mise = true
+[daemons.lambda.health_http]
+url = "http://127.0.0.1:25126/health"
+interval = "30s"
+timeout = "5s"
+retries = 3
+
+# ============================================================================
+# MCP — sigma guard proxy
+# ============================================================================
+
+[daemons.sigma-guard]
+# 2026-10-27: sigma was an ORPHANED product — nothing served it, and the
+# SIGMA_GUARD_URL keyring entry pointed at grafana :25210/mcp (not an MCP
+# server). One proxy, one shared stdio entry, consumed by BOTH tau
+# extensions and kappa plugins. This daemon keeps the proxy alive.
+run = "exec /home/toxic/pens/olympus/products/sigma/dist/index.js start"
+auto = ["start"]
+retry = true
+ready_http = "http://127.0.0.1:8787/__bili/stats"
+port = 8787
+expected_port = [8787]
+dir = "/home/toxic/pens/olympus/products/sigma"
+mise = false
+[daemons.sigma-guard.health_http]
+url = "http://127.0.0.1:8787/__bili/stats"
+interval = "30s"
+timeout = "5s"
+retries = 3
+
+# ============================================================================
+# GROUPS — Logical daemon collections
+# ============================================================================
+
+[groups.web]
+daemons = ["lambda"]
+description = "kimi-code web app"
+
+[groups.mcp]
+daemons = ["sigma-guard"]
+description = "Sigma MCP guard proxy"
+
+[groups.all]
+daemons = ["lambda", "sigma-guard"]
+description = "All olympus daemons"

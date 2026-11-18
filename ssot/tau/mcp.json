@@ -1,0 +1,52 @@
+{
+ "$schema": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/packages/coding-agent/src/config/mcp-schema.json",
+ "mcpServers": {
+  "gatehouse": {
+   "type": "http",
+   "url": "http://127.0.0.1:25127/mcp",
+   "headers": {
+    "X-API-Key": "763b67284d88ecfa7576fbd54c854e334d88bbf7dddc936927b1b8dfe5b41e59",
+    "Host": "localhost:25127"
+   }
+  },
+  "doorbell": {
+   "type": "http",
+   "url": "http://127.0.0.1:25127/mcp",
+   "headers": {
+    "Host": "localhost:25127",
+    "X-API-Key": "763b67284d88ecfa7576fbd54c854e334d88bbf7dddc936927b1b8dfe5b41e59"
+   }
+  },
+  "blackbird": {
+   "type": "http",
+   "url": "http://127.0.0.1:25113/mcp",
+   "headers": {
+    "Accept": "application/json, text/event-stream"
+   }
+  },
+  "desktop-commander-windows": {
+   "type": "stdio",
+   "command": "bun",
+   "args": [
+    "x",
+    "@wonderwhy-er/desktop-commander@latest"
+   ],
+   "env": {}
+  },
+  "context7": {
+   "type": "stdio",
+   "command": "bun",
+   "args": [
+    "x",
+    "@upstash/context7-mcp"
+   ]
+  },
+  "websearch-skill": {
+   "type": "stdio",
+   "command": "/home/toxic/.bun/bin/bun",
+   "args": [
+    "/home/toxic/pens/ranch/products/mcp/websearch-mcp/server.ts"
+   ]
+  }
+ }
+}

@@ -1,0 +1,188 @@
+{
+  "version": 2,
+  "generated": "2026-11-03T20:04:24.720Z",
+  "pen": "olympus",
+  "theme": "Greek-named products",
+  "products": [
+    {
+      "name": "agon",
+      "path": "/home/toxic/pens/olympus/products/agon",
+      "repo": "https://github.com/toxicwind/agon.git",
+      "hasBin": false
+    },
+    {
+      "name": "antilogos",
+      "path": "/home/toxic/pens/olympus/products/antilogos",
+      "repo": "https://github.com/toxicwind/antilogos.git",
+      "hasBin": false
+    },
+    {
+      "name": "chronos-forge",
+      "path": "/home/toxic/pens/olympus/products/chronos-forge",
+      "repo": "https://github.com/toxicwind/chronos-forge.git",
+      "hasBin": false
+    },
+    {
+      "name": "didymos",
+      "path": "/home/toxic/pens/olympus/products/didymos",
+      "repo": "https://github.com/toxicwind/didymos.git",
+      "hasBin": false
+    },
+    {
+      "name": "ergane",
+      "path": "/home/toxic/pens/olympus/products/ergane",
+      "repo": "https://github.com/toxicwind/ergane.git",
+      "hasBin": false
+    },
+    {
+      "name": "forge",
+      "path": "/home/toxic/pens/olympus/products/forge",
+      "repo": "https://github.com/toxicwind/forge.git",
+      "hasBin": false
+    },
+    {
+      "name": "haos",
+      "path": "/home/toxic/pens/olympus/products/haos",
+      "repo": "https://github.com/toxicwind/haos.git",
+      "hasBin": false
+    },
+    {
+      "name": "hestia",
+      "path": "/home/toxic/pens/olympus/products/hestia",
+      "repo": "https://github.com/toxicwind/hestia.git",
+      "hasBin": false
+    },
+    {
+      "name": "kairos",
+      "path": "/home/toxic/pens/olympus/products/kairos",
+      "repo": "https://github.com/toxicwind/kairos.git",
+      "hasBin": false
+    },
+    {
+      "name": "kappa",
+      "path": "/home/toxic/pens/olympus/products/kappa",
+      "repo": "https://github.com/toxicwind/kappa.git",
+      "hasBin": false
+    },
+    {
+      "name": "keryx",
+      "path": "/home/toxic/pens/olympus/products/keryx",
+      "repo": "https://github.com/toxicwind/keryx.git",
+      "hasBin": false
+    },
+    {
+      "name": "kilo",
+      "path": "/home/toxic/pens/olympus/products/kilo",
+      "repo": "https://github.com/toxicwind/kilo.git",
+      "hasBin": false
+    },
+    {
+      "name": "kleio",
+      "path": "/home/toxic/pens/olympus/products/kleio",
+      "repo": "https://github.com/toxicwind/kleio.git",
+      "hasBin": false
+    },
+    {
+      "name": "kryptos",
+      "path": "/home/toxic/pens/olympus/products/kryptos",
+      "repo": "https://github.com/toxicwind/kryptos.git",
+      "hasBin": false
+    },
+    {
+      "name": "lambda",
+      "path": "/home/toxic/pens/olympus/products/lambda",
+      "repo": "https://github.com/toxicwind/lambda.git",
+      "hasBin": false
+    },
+    {
+      "name": "mneme",
+      "path": "/home/toxic/pens/olympus/products/mneme",
+      "repo": "https://github.com/toxicwind/mneme.git",
+      "hasBin": false
+    },
+    {
+      "name": "morphe",
+      "path": "/home/toxic/pens/olympus/products/morphe",
+      "repo": "https://github.com/toxicwind/morphe.git",
+      "hasBin": false
+    },
+    {
+      "name": "muse",
+      "path": "/home/toxic/pens/olympus/products/muse",
+      "repo": "https://github.com/toxicwind/muse.git",
+      "hasBin": false
+    },
+    {
+      "name": "opentui",
+      "path": "/home/toxic/pens/olympus/products/opentui",
+      "repo": "https://github.com/toxicwind/opentui.git",
+      "hasBin": false
+    },
+    {
+      "name": "opsis",
+      "path": "/home/toxic/pens/olympus/products/opsis",
+      "repo": "https://github.com/toxicwind/opsis.git",
+      "hasBin": false
+    },
+    {
+      "name": "pinax",
+      "path": "/home/toxic/pens/olympus/products/pinax",
+      "repo": "https://github.com/toxicwind/pinax.git",
+      "hasBin": false
+    },
+    {
+      "name": "primitives",
+      "path": "/home/toxic/pens/olympus/products/primitives",
+      "repo": "https://github.com/toxicwind/primitives.git",
+      "hasBin": false
+    },
+    {
+      "name": "propylon",
+      "path": "/home/toxic/pens/olympus/products/propylon",
+      "repo": "https://github.com/toxicwind/propylon.git",
+      "hasBin": false
+    },
+    {
+      "name": "rig-citizen",
+      "path": "/home/toxic/pens/olympus/products/rig-citizen",
+      "repo": "https://github.com/toxicwind/rig-citizen.git",
+      "hasBin": false
+    },
+    {
+      "name": "sigma",
+      "path": "/home/toxic/pens/olympus/products/sigma",
+      "repo": "https://github.com/toxicwind/sigma.git",
+      "hasBin": false
+    },
+    {
+      "name": "skopos",
+      "path": "/home/toxic/pens/olympus/products/skopos",
+      "repo": "https://github.com/toxicwind/skopos.git",
+      "hasBin": false
+    },
+    {
+      "name": "tarachos",
+      "path": "/home/toxic/pens/olympus/products/tarachos",
+      "repo": "https://github.com/toxicwind/tarachos.git",
+      "hasBin": false
+    },
+    {
+      "name": "tau",
+      "path": "/home/toxic/pens/olympus/products/tau",
+      "repo": "https://github.com/toxicwind/tau.git",
+      "hasBin": false
+    },
+    {
+      "name": "ts-blank-space",
+      "path": "/home/toxic/pens/olympus/products/ts-blank-space",
+      "repo": "https://github.com/toxicwind/ts-blank-space.git",
+      "hasBin": false
+    },
+    {
+      "name": "typescript-go",
+      "path": "/home/toxic/pens/olympus/products/typescript-go",
+      "repo": "https://github.com/toxicwind/typescript-go.git",
+      "hasBin": false
+    }
+  ]
+}

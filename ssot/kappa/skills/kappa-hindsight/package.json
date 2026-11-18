@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "bun-types": "^1.4.4"
+  },
+  "name": "kappa-hindsight-skill",
+  "private": true,
+  "type": "module",
+  "bin": "bin/kappa-hindsight"
+}

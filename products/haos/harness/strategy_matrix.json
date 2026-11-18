@@ -1,0 +1,79 @@
+{
+  "version": "2.1.0",
+  "schema": "effusion.chaos.strategy-matrix/v2",
+  "workspace_var": "LOCAL_WORKSPACE",
+  "branding": "Effusion Chaos Harness 2.x.x — dark mode first",
+  "defaults": {
+    "timeout_seconds": 120,
+    "capture_stderr": true,
+    "on_signature": "map_to_patch",
+    "retry": { "attempts": 3, "backoff_ms": 250, "jitter_ms": 100 }
+  },
+  "parallel_arms": [
+    {
+      "id": "edge_socket",
+      "description": "edge-case socket handling — half-close, RST, FIN, lingering",
+      "script": "chaos/socket_half_close.py",
+      "type": "python",
+      "concurrency": 8,
+      "barrier_sync": true,
+      "loop_iterations": 1,
+      "expected_signals": ["FIN", "half-close", "SHUT_WR"]
+    },
+    {
+      "id": "boundary_limits",
+      "description": "FD_SETSIZE 1024, port 0 random, backlog overflow",
+      "script": "chaos/boundary_limits.sh",
+      "type": "shell",
+      "concurrency": 4,
+      "barrier_sync": false,
+      "loop_iterations": 1,
+      "expected_signals": ["EMFILE", "ENFILE", "EAGAIN"]
+    },
+    {
+      "id": "payload_overflow",
+      "description": "payload size boundaries 0 to 1MiB, check truncation",
+      "script": "chaos/payload_overflow.py",
+      "type": "python",
+      "concurrency": 6,
+      "barrier_sync": false,
+      "loop_iterations": 1,
+      "expected_signals": ["buffer", "truncation", "EMSGSIZE"]
+    },
+    {
+      "id": "half_close_race",
+      "description": "simultaneous half-close from both ends — race for who sends FIN first",
+      "script": "chaos/socket_half_close.py",
+      "type": "python",
+      "concurrency": 12,
+      "barrier_sync": true,
+      "loop_iterations": 100,
+      "expected_signals": ["SHUT_WR", "FIN", "recv len=0"]
+    },
+    {
+      "id": "rst_abort",
+      "description": "abortive close (SO_LINGER 0) — RST vs graceful FIN handling",
+      "script": "chaos/rst_abort.py",
+      "type": "python",
+      "concurrency": 8,
+      "barrier_sync": false,
+      "loop_iterations": 1,
+      "expected_signals": ["ConnectionResetError", "RST OBSERVED"]
+    }
+  ],
+  "signature_map": [
+    { "signature": "Address already in use", "errno": "EADDRINUSE", "patch": "SO_REUSEADDR + random port 0 + retry with backoff" },
+    { "signature": "Too many open files", "errno": "EMFILE", "patch": "close idle sockets + ulimit -n 2048 + poll/epoll with FD_SETSIZE guard" },
+    { "signature": "Connection reset by peer", "errno": "ECONNRESET", "patch": "treat RST as valid chaos signal, exponential backoff retry, log as expected" },
+    { "signature": "Broken pipe", "errno": "EPIPE", "patch": "check SHUT_WR ordering, barrier sync to avoid write after peer FIN" },
+    { "signature": "Message too long", "errno": "EMSGSIZE", "patch": "chunk payload to 8192 bytes, assert truncation handling" },
+    { "signature": "Resource temporarily unavailable", "errno": "EAGAIN", "patch": "non-blocking mode + EAGAIN retry loop with select deadline" },
+    { "signature": "Cannot assign requested address", "errno": "EADDRNOTAVAIL", "patch": "bind 127.0.0.1 explicitly, never wildcard bind under lo-down" }
+  ],
+  "orchestration": {
+    "executor": "bash chaos/run_matrix.sh",
+    "recovery_loop": "bash chaos/error_recovery.sh",
+    "dark_mode": true,
+    "artifacts": ["logs/", "strategy_matrix.json", "proof_dark.png", "proof_tone.wav"]
+  }
+}

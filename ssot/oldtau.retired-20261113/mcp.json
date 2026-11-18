@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "thresher": {
+      "url": "http://127.0.0.1:25127/mcp",
+      "transport": "http",
+      "enabled": true,
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer b77mFSZxl9iFJKqQdjUjabqhPqdpKl2Z"
+      }
+    },
+    "argos": {
+      "command": "/home/toxic/pens/agentic-moment/products/argos/bin/argos-mcp",
+      "args": [
+        "mcp"
+      ],
+      "env": {
+        "ARGOS_URL": "http://127.0.0.1:25254"
+      },
+      "type": "stdio",
+      "enabled": true
+    }
+  }
+}
